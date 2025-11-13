@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const i18n = {
+        it: {
+            titulo: "Cantina e Ristorante Tre Fratelli",
+            
+        },
+
+        en_uk: {
+
+        },
+
+        pt_br: {
+
+        }
+    }
+
+    function setLanguage(lang) {
+    const elements = document.querySelectorAll('[id]');
+    const translations = i18n[lang];
+
+    elements.forEach(el => {
+      const key = el.id;
+      if (translations[key]) {
+        if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+          el.innerHTML = translations[key];
+        } else {
+          el.textContent = translations[key];
+        }
+      }
+    });
+
+    localStorage.setItem('lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    setLanguage(savedLang);
+  });
+</script>
+</html>
