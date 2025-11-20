@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerario Turistico - Tre Fratelli</title>
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header class="header">
+
+        <!-- LANGUAGE SELECTOR — igual ao index -->
+        <div class="language-menu">
+            <div class="selected-language">
+                <img src="imagens/italia.png" alt="Italiano">
+                <span>It</span>
+                <span class="arrow">▼</span>
+            </div>
+
+            <div class="language-options">
+                <div class="language-option">
+                    <img src="imagens/italia.png" alt="Italiano">
+                    <span>It</span>
+                </div>
+
+                <div class="language-option">
+                    <img src="imagens/reinounido.png" alt="English">
+                    <span>En</span>
+                </div>
+
+                <div class="language-option">
+                    <img src="imagens/Brasil.png" alt="Português">
+                    <span>Pt</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-icons">
+            <a href="" class="navegacao-btn">
+                <img src="imagens/iconeVinho.png" alt="Vini">
+            </a>
+
+            <div class="top-menu-icons">
+                <a href="Storia.html"><!--Colocar o icone de ampulheta pelo bootstrap aqui --></a>
+                <a href="AttrazioniTuristiche.html"><!--Colocar o icone de localizacao pelo bootstrap aqui --></a>
+                <a href="index.html"><!--Colocar o icone de casa pelo bootstrap aqui --></a>
+                <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a>
+                <a href="Cardapio.html"><!--Colocar o icone de garfo e faca pelo bootstrap aqui --></a>
+                <a href="index.html"><!--Colocar o icone de robo pelo bootstrap aqui --></a>
+            </div>
+        </div>
+        <p><img src="imagens/logo completa.jpeg" alt="Tre Fratelli" class="logo">Tre Fratelli</p>
+
+    </header>
+
+
+
+    <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+    <main class="vini">
+        <h1>vini</h1>
+        <img src="" alt=""> <!--imagem do senhor segurando taca de vinho-->
+        <div class="center-section">
+            <div class="wine-name" id="wineName"><strong>Valpolicella Tre Fratelli 2019</strong></div>
+            <div class="wine-description" id="wineDescription">Trosso vivace e conviviale - edizione limitata</div>
+
+            <div class="wine-details">
+                <div class="detail-item">
+                    <strong class="detail-label">Uvas:</strong>
+                    <span class="detail-value" id="grapes">Corvina, Rondinella e Molinara</span>
+                </div>
+                <div class="detail-item">
+                    <strong class="detail-label">Tenore alcolico:</strong>
+                    <span class="detail-value" id="alcohol">13,5%</span>
+                </div>
+                <div class="detail-item">
+                    <strong class="detail-label">Origine:</strong>
+                    <span class="detail-value" id="origin">Tirano (SO), Lombardia</span>
+                </div>
+            </div>
+
+            <div class="pairing-text">
+                <strong>Armonizzazione suggerita:</strong>
+                <div id="pairing">Antipasti mistos, bruschetta al pomodoro, pizzas artesanais, massas ao sugo, queijos
+                    médios</div>
+            </div>
+
+            <div class="center-section">
+                <div class="wine-title">vini</div>
+                <div class="wine-display">
+                    <div class="wine-bottle-container">
+                        <img id="vini" src="imagens/Vapolicella.jpg" alt="Wine bottle">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation -->
+        <div class="wine-counter">
+            <span id="currentWine">1</span> / 16
+        </div>
+
+        <div class="navigation">
+            <button class="nav-button" id="nextBtn" onclick="nextWine()">→</button>
+        </div>
+    </main>
+
+
+
+
+</body>
+
+</html>
