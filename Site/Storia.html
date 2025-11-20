@@ -47,95 +47,98 @@
     <!-- Título -->
     <h1 class="storia-title">La nostra storia e il tuo piacere.</h1>
 
-    <!-- Primeira linha do tempo (sem imagens) -->
-    <div class="timeline timeline-top">
+    <!-- ========================= LINHA DO TEMPO (APENAS OS 4 PINS) ========================= -->
+    <div class="timeline">
 
-      <!-- Marco 1 -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
+      <!-- PIN 1 -->
+      <button class="timeline-pin" data-target="item1">
+        <img src="imagens/pin.png" alt="Pin">
         <h3>I. Le Origini e la prima crisi</h3>
-      </div>
+      </button>
 
-      <!-- Marco 2 -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
+      <!-- PIN 2 -->
+      <button class="timeline-pin" data-target="item2">
+        <img src="imagens/pin.png" alt="Pin">
         <h3>II. Il ritorno alla crescita e la seconda crisi</h3>
-      </div>
+      </button>
 
-      <!-- Marco 3 -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
+      <!-- PIN 3 -->
+      <button class="timeline-pin" data-target="item3">
+        <img src="imagens/pin.png" alt="Pin">
         <h3>III. Ritorno dovuto al turismo e alla migrazione giovanile</h3>
-      </div>
+      </button>
 
-      <!-- Marco 4 -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
+      <!-- PIN 4 -->
+      <button class="timeline-pin" data-target="item4">
+        <img src="imagens/pin.png" alt="Pin">
         <h3>IV. Tra Tradizione e ispirazione creativa</h3>
-      </div>
+      </button>
+
     </div>
 
 
-    <!-- ========================= SEGUNDA LINHA DO TEMPO ========================= -->
-    <h1 class="storia-title">La nostra storia e il tuo piacere.</h1>
 
-    <div class="timeline timeline-bottom">
+    <!-- ========================= CONTEÚDOS QUE APARECEM AO CLICAR ========================= -->
 
-      <!-- Marco 1 com imagem -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
-        <h3>I. Le Origini e la prima crisi</h3>
+    <!-- Item 1 -->
+    <div id="item1" class="timeline-content">
+      <!-- JS deve exibir este bloco quando clicar no pin 1 -->
+      <img class="timeline-image" src="imagens/storia.jpg" alt="Origini foto">
+      <p class="timeline-text">
+        La Cantina e Ristorante Tre Fratelli aprì
+        ufficialmente nel 1925, ma la vita non fu mai facile.
+        Nel 1930, rischiò di chiudere a causa della crisi
+        economica e dei debiti che aumentarono.
 
-        <img class="timeline-image" src="imagens/storia4.jpg" alt="Origini foto">
-
-        <p class="timeline-text">
-          La cantina Tre Fratelli nasce tra le colline della Valtellina.
-          Un luogo semplice, segnato dalla storia e dai momenti difficili…
-        </p>
-      </div>
-
-
-      <!-- Marco 2 com imagem -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
-        <h3>II. Il ritorno alla crescita e la seconda crisi</h3>
-
-        <img class="timeline-image" src="imagens/storia3.jpg" alt="Crescita foto">
-
-        <p class="timeline-text">
-          Lo sforzo e la passione hanno ridato vita alla tenuta…
-          Ma una nuova crisi ha messo alla prova la resilienza della famiglia.
-        </p>
-      </div>
-
-
-      <!-- Marco 3 com imagem -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
-        <h3>III. Ritorno dovuto al turismo e alla migrazione giovanile</h3>
-
-        <img class="timeline-image" src="imagens/storia2.jpg" alt="Turismo foto">
-
-        <p class="timeline-text">
-          Negli anni '90 il turismo ha reso la Valtellina meta culturale…
-          I giovani tornano a dare vita al territorio.
-        </p>
-      </div>
-
-      <!-- Marco 4 com imagem -->
-      <div class="timeline-item">
-        <div class="pin"><img src="imagens/pin.png" alt="Pin"></div>
-        <h3>IV. Tra Tradizione e ispirazione creativa</h3>
-
-        <img class="timeline-image" src="imagens/storia.jpg" alt="Tradizione foto">
-
-        <p class="timeline-text">
-          La cantina oggi unisce creatività moderna e tradizione,
-          mantenendo viva la memoria del territorio.
-        </p>
-      </div>
-
+      </p>
     </div>
+
+    <!-- Item 2 -->
+    <div id="item2" class="timeline-content">
+      <!-- JS deve exibir este bloco quando clicar no pin 2 -->
+      <img class="timeline-image" src="imagens/storia4.jpg" alt="Crescita foto">
+      <p class="timeline-text">
+        Per salvare il posto, la madre dei fratelli, Teresa, aprì una
+        piccola cucina rustica per servire i viaggiatori della ferrovia di
+        Tirano, combinando vino e cibo locale. Grazie a questo,
+        riuscirono a mantenere la proprietà. Quando finalmente
+        iniziarono a realizzare un piccolo profitto, scoppiò la Seconda
+        Guerra Mondiale, che fu un duro colpo, sia per l'
+        azienda che
+        per la famiglia.
+
+      </p>
+    </div>
+
+    <!-- Item 3 -->
+    <div id="item3" class="timeline-content">
+      <!-- JS deve exibir este bloco quando clicar no pin 3 -->
+      <img class="timeline-image" src="imagens/storia2.jpg" alt="Turismo foto">
+      <p class="timeline-text">
+        Negli anni '60 e
+        '70, con il boom turistico nelle Alpi,
+        vissero una nuova fase, raccogliendo i frutti della
+        pazienza e della perseveranza. Fu un periodo molto
+        positivo. — Ma durante la crisi degli anni '80, il
+        ristorante rischiò di chiudere di nuovo a causa
+        della concorrenza e dell'
+        emigrazione dei giovani.
+      </p>
+    </div>
+
+    <!-- Item 4 -->
+    <div id="item4" class="timeline-content">
+      <!-- JS deve exibir este bloco quando clicar no pin 4 -->
+      <img class="timeline-image" src="imagens/storia3.jpg" alt="Tradizione foto">
+      <p class="timeline-text">
+        Fu allora che uno dei pronipoti, Alessandro, laureato in
+        enologia a Milano, portò nuove idee, unendo tradizione e
+        innovazione. Quest'anno compie 100 anni ed è stata
+        acquistata dalla famiglia Zanarelli, che promette di
+        ristrutturare il ristorante.
+      </p>
+    </div>
+
 
     <!-- rodapé -->
     <footer class="storia-footer">
@@ -143,7 +146,4 @@
     </footer>
 
   </section>
-
 </body>
-
-</html>
