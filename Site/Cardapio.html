@@ -159,11 +159,11 @@
                     <div class="menu-image">
                         <img src="imagens/macarrão.jpg" alt="Pasta - Spaghetti">
                     </div>
-                    
-                        <!-- botão de avançar -->
-                        <a class="next-section" href="#desserts"><!--Colocar aqui o icone de avancar pelo bootstrap --></a>
-                    </div>
+
+                    <!-- botão de avançar -->
+                    <a class="next-section" href="#desserts"><!--Colocar aqui o icone de avancar pelo bootstrap --></a>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -253,7 +253,8 @@
                             <p>Grigliata sulla legna.</p>
                         </div>
                         <!-- botão de avançar -->
-                        <a class="next-section" href="#bevande"><!--Colocar aqui o icone de avancar pelo bootstrap --></a>
+                        <a class="next-section"
+                            href="#bevande"><!--Colocar aqui o icone de avancar pelo bootstrap --></a>
 
                     </div>
 
@@ -326,9 +327,190 @@
                     <img src="imagens/café.jpg" alt="Caffè Cappuccino con biscotto">
                 </div>
             </div>
-             <!-- botão de voltar ao inicio -->
-                        <a class="next-section" href="#antipaste"><!--Colocar aqui o icone de avancar pelo bootstrap --></a>
+            <!-- botão de voltar ao inicio -->
+            <a class="next-section" href="#antipaste"><!--Colocar aqui o icone de voltar pelo bootstrap --></a>
             </div>
+
+            <h1>FAI LA TUA<br>PRENOTAZIONE</h1>
+
+
+        </section>
+
+        <div>
+            <img src="imagens/Logo de Icone.jpeg" alt="Logo Tre Fratelli"><p>Tre Fratelli</p>
+        </div>
+        <!-- First Section: Orario -->
+        <section>
+
+            <div>
+                <img src="imagens/stradadelvini.png" alt="Vigna con campi terrazzati e edificio tradizionale">
+            </div>
+
+            <div>
+                <h2>Orario</h2>
+
+                <p>
+                    La nostra prenotazione include la scelta anticipata del piatto e dell'orario.
+                    Gli orari disponibili sono:
+                </p>
+
+                <ul>
+                    <li>11:00</li>
+                    <li>12:00</li>
+                    <li>13:00</li>
+                </ul>
+
+                <p>
+                    Ogni pranzo ha una durata di 45 minuti.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Second Section: Sconto & Partner -->
+        <section>
+
+            <div>
+                <h2>Sconto</h2>
+
+                <p>
+                    I clienti del ristorante e dei pacchetti gastronomici avranno uno sconto del 5%
+                    sugli acquisti nel negozio, dove vengono venduti i prodotti degustati
+                    e alcuni souvenir esclusivi.
+                </p>
+
+                <h2>Prenota con i nostri partner</h2>
+
+                <p>
+                    Prenotando tramite una delle nostre agenzie partner - come il Bernina Express -
+                    hai diritto a vantaggi esclusivi.
+                </p>
+            </div>
+
+            <div>
+                <img src="imagens/stradadelvini.png" alt="Vigna con campi terrazzati e edificio tradizionale">
+            </div>
+
+        </section>
+        <section>
+
+
+            <!-- Step 1: Reservation Details -->
+            <div id="step1">
+                <div>
+                    <div>
+                        <img src="imagens/stradadelvini.png" alt="Vineyard landscape">
+                    </div>
+                    <div>
+
+                        <div>
+                            <label>Numero di persone</label>
+                            <input type="number" id="numPeople" placeholder="Es. 2" min="1">
+                        </div>
+
+                        <div>
+                            <label>Data</label>
+                            <input type="date" id="date">
+                        </div>
+
+                        <div>
+                            <label>Orario</label>
+                            <input type="time" id="time">
+                        </div>
+
+                        <div>
+                            <label>Agenzia</label>
+                            <select id="agency">
+                                <option value="">Seleziona agenzia</option>
+                                <option value="agency1">Agenzia 1</option>
+                                <option value="agency2">Agenzia 2</option>
+                                <option value="agency3">Agenzia 3</option>
+                            </select>
+                        </div>
+
+                        <button onclick="goToStep(2)">Avanzare</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Personal Information -->
+            <div id="step2">
+                <div>
+                    <div>
+                        <img src="imagens/stradadelvini.png" alt="Vineyard landscape">
+                    </div>
+
+                    <div>
+                        <h2>FAI LA TUA<br>PRENOTAZIONE</h2>
+
+                        <div>
+                            <label>Nome completo</label>
+                            <input type="text" id="fullName" placeholder="Es. Giovanni Rossi">
+                        </div>
+
+                        <div>
+                            <label>CPF</label>
+                            <input type="text" id="cpf" placeholder="Es. 123.456.789-00">
+                        </div>
+
+                        <div>
+                            <label>Telefono</label>
+                            <input type="tel" id="phone" placeholder="Es. +39 123 456 7890">
+                        </div>
+
+                        <div>
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="Es. giovanni@example.com">
+                        </div>
+
+                        <div>
+                            <button onclick="goToStep(1)">Indietro</button>
+                            <button onclick="goToStep(3)">Prenotare</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment Confirmation -->
+            <div id="step3">
+                <div>
+                    <div>
+                        <img src="imagens/stradadelvini.png" alt="Vineyard landscape">
+                    </div>
+
+                    <div>
+                        <h2>FAI LA TUA<br>PRENOTAZIONE</h2>
+
+                        <div>
+                            <label>Totale</label>
+                            <input type="text" id="total" placeholder="€ 0.00">
+                        </div>
+
+                        <div>
+                            <p>Metodo di pagamento</p>
+
+                            <div>
+                                <label>
+                                    <input type="radio" name="payment" value="anticipato" checked>
+                                    <!-- Colocar icone do whatsapp aqui --> Anticipato
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="payment" value="sul_posto">
+                                    Sul posto
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button onclick="goToStep(2)">Indietro</button>
+                            <button onclick="submitBooking()">Confermare</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </section>
 
