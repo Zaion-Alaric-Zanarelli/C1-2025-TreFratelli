@@ -16,32 +16,47 @@
   <!-- HEADER -->
   <header>
     <div class="language-selector">
-      <button class="lang-btn" id="btn_1">
-        <span id="flag"></span>
-        <span id="langName">It</span>
-        <i class="ph-fill ph-triangle" id="lang-arrow"></i>
-      </button>
-
-      <div class="lang-dropdown">
-        <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
-        <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
-        <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
-      </div>
+    <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
+      <span id="flag"></span>
+      <span id="langName">It</span>
+      <i class="ph-fill ph-triangle" id="lang-arrow"></i>
+    </button>
+    <div class="lang-dropdown" id="langMenu">
+      <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
+      <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
+      <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
     </div>
-
-    <div class="header-icons">
-      <button class="navegacao-btn"><img src="imagens/iconeVinho.png" alt="Vini"></button>
-      <div class="top-menu-icons">
-        <a href="Storia.html"><i class="ph-fill ph-hourglass-low"></i></a>
-        <a href="AttrazioniTuristiche.html"><i class="ph-fill ph-map-pin"></i></a>
-        <a href="index.html"><i class="ph-fill ph-house"></i></a>
-        <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a> <!-- To achando esse imagem mt estranha se nao conseguirem padronizar usem essa <i class="ph-fill ph-wine"></i> -->
-        <a href="Cardapio.html"><i class="ph-fill ph-fork-knife"></i></a>
-        <a href="chatbot.html"><i class="ph-fill ph-robot"></i></a>
-      </div>
+  </div>
+  <div class="header-icons">
+    <button class="navegacao-btn">
+      <i class="ph-fill ph-wine"></i>
+    </button>
+    <div class="top-menu-icons">
+      <div class="big-circle"></div>
+      <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+      <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin"></i></a>
+      <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+      <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+      <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+      <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
     </div>
-    <p><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo"><span id="logoText">Tre Fratelli</span></p>
+  </div>
+  <div class="sup-direita">
+    <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+    <div class="texto-ao-lado">
+      <p>Tre Fratelli</p>
+    </div>
+  </div>
   </header>
+  <div class="avancar-pagina">
+    <a href="cardapio.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
 
   <!-- ====== CONTEÚDO PRINCIPAL ====== -->
   <main class="vini">
@@ -81,7 +96,15 @@
         </div>
       </div>
     </div>
-
+<div class="avancar-pagina" style="right: 25px; top: 50%;">
+    <a href="cardapio.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
     <!-- Navigation -->
     <div class="wine-counter">
       <span id="currentWine">1</span> / 16
@@ -90,7 +113,11 @@
       <button class="nav-button" id="nextBtn" onclick="nextWine()">→</button>
     </div>
   </main>
-
+<footer class="site-footer">
+    <div class="footer-bottom">
+        &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+</footer>
 </body>
 
 <script>

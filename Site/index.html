@@ -5,144 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="titulo">Cantina e Ristorante Tre Fratelli</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="language-selector">
-            <button class="lang-btn" id="btn_1">
-              <span id="flag"></span>
-              <span id="langName">It</span>
-              <i class="ph-fill ph-triangle" id="lang-arrow"></i>
-            </button>
+    <!-- ================= VIDEO INTRO — APPARE ALL’APERTURA ================= -->
+<div class="video-intro-container">
+    <video class="video-intro" autoplay muted playsinline>
+        <source src="videos/videopanoramico.mp4" type="video/mp4">
+    </video>
+</div>
+<!-- ===================================================================== -->
 
-
-            <div class="lang-dropdown">
-                <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
-                <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
-                <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
-            </div>
-
-        </div>
-        <div class="header-icons">
-            <button class="navegacao-btn">
-                <i class="ph-fill ph-house"></i>
-            </button>
-
-            <div class="top-menu-icons">
-                <a href="Storia.html"><i class="ph-fill ph-hourglass-low"></i></a>
-                <a href="AttrazioniTuristiche.html"><i class="ph-fill ph-map-pin"></i></a>
-                <a href="index.html"><i class="ph-fill ph-house"></i></a>
-                <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a> <!-- To achando esse imagem mt estranha se nao conseguirem padronizar usem essa <i class="ph-fill ph-wine"></i> -->
-                <a href="Cardapio.html"><i class="ph-fill ph-fork-knife"></i></a>
-                <a href="chatbot.html"><i class="ph-fill ph-robot"></i></a>
-            </div>
-        </div>
-    <p><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo">Tre Fratelli</p>
-  </header>
-
-  <!-- ========================== SLIDE 1 — INIZIO ========================== -->
-  <section id="inizio" class="slide slide-inizio">
-
-    <!-- imagem de fundo -->
-    <div class="hero-background">
-      <img src="imagens/vini.jpeg" alt="Vinhedos da Valtellina">
+<!-- HEADER -->
+<header>
+    <div class="language-selector">
+    <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
+      <span id="flag"></span>
+      <span id="langName">It</span>
+      <i class="ph-fill ph-triangle" id="lang-arrow"></i>
+    </button>
+    <div class="lang-dropdown" id="langMenu">
+      <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
+      <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
+      <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
     </div>
-
-    <!-- título central -->
-    <div class="hero-title">
-      <h1 id="h1_1">Cantina e Ristorante</h1>
-      <h2 id="h2_1">Tre Fratelli</h2>
+  </div>
+  <div class="header-icons">
+    <button class="navegacao-btn">
+      <i class="ph-fill ph-house"></i>
+    </button>
+    <div class="top-menu-icons">
+      <div class="big-circle"></div>
+      <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+      <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin"></i></a>
+      <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+      <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+      <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+      <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
     </div>
-    
-    <div class="inizio-content">
-      <h3 class="title-inizio" id="h3_1">inizio</h3>
-
-      <p class="inizio-text" id="p_1">
-        “Si dice che tra le colline ombreggiate di Tre Fratelli, quando il sole ci saluta e il vento sussurra
-        tra le viti, nasca il suono della cantina.<br><br>
-
-        Non è solo lo scoppiettio dell'uva matura, né l'eco delle mani che la raccolgono: è qualcosa di più antico.
-        È il respiro della terra. Il mormorio del tempo. Il vino prima di essere vino.<br><br>
-
-        Tre Fratelli non produce bottiglie. Risveglia ricordi.<br>
-        Ogni annata è un frammento di eternità imbottigliato tra silenzio e aroma.”
-      </p>
-
-      <!-- imagem da garrafa -->
-      <div class="bottle-img">
-        <img src="imagens/vinhodecorativo.png" alt="Bottiglia Tre Fratelli">
-      </div>
+  </div>
+  <div class="sup-direita">
+    <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+    <div class="texto-ao-lado">
+      <p>Tre Fratelli</p>
     </div>
-
-  </section>
-
-
-  <!-- ========================== SLIDE 2 — COLTIVAZIONE ========================== -->
-  <section id="coltivazione" class="slide slide-coltivazione">
-
-    <h1 class="colt-title" id="h1_2">coltivazione</h1>
-  <img src="imagens/coltivazione.png" alt="Vigneto Timmerman">
-    <p class="colt-sub" id="p_2">Le fondamenta del sapore</p>
-
-    <div class="coltivazione-wrapper">
-
-      <!-- texto da esquerda -->
-      <div class="colt-left">
-        <div class="colt-left-block">
-          <h3 id="h3_2">Qualità del suolo</h3>
-          <p id="p_3">
-            Un terreno sano e ricco di minerali nutre le viti in profondità.  
-            L'uva assorbe qualità uniche modellando complessità e struttura.  
-            Il terreno diventa la base invisibile su cui la crescita prospera,  
-            definendo gusto e aroma per generazioni.
-          </p>
-        </div>
-
-        <div class="colt-left-block">
-          <h3 id="h3_3">Assistenza stagionale</h3>
-          <p id="p_4">
-            Potatura attenta, monitoraggio e irrigazione mantengono le viti in equilibrio.  
-            L'attenzione qualificata garantisce frutti sani, piante forti e raccolti eccellenti.
-          </p>
-        </div>
-
-        <div class="colt-left-block">
-          <h3 id="h3_4">Equilibrio naturale</h3>
-          <p id="p_5">
-            La biodiversità arricchisce i vigneti attirando insetti e fauna utile.  
-            Il rispetto degli ecosistemi sostiene il territorio e garantisce sostenibilità futura.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="colt-right">
-        <img src="imagens/Logo de Icone.jpeg" alt="Logo">
-        <p id="p_6">Timmerman Vineyard</p>
-      </div>
-    </div>
-    
-    <!-- botão avançar -->
-    <a href="Storia.html" class="next-btn">
-      <img src="imagens/setadireita.png" alt="Avanti">
+  </div>
+</header>
+<div class="avancar-pagina">
+    <a href="chatbot.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
     </a>
+  </div>
 
-    <footer class="footer-placeholder">
-      *footer goes here
-    </footer>
+<!-- ==================== SLIDE 1 — INIZIO ==================== -->
+<section id="inizio" class="slide-inizio">
 
+    <!-- Immagine di sfondo del vigneto -->
+    <div class="sfondo-vigneto">
+        <img src="imagens/vini.jpeg" alt="Vigneto Valtellina">
+    </div>
 
-  </section>
+    <div class="curva-rosa">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <path 
+            d="M0,280 
+               Q200,220 400,280 
+               Q650,360 800,260
+               Q1000,140 1200,280
+               Q1350,380 1440,320
+               L1440,800 L0,800 Z" 
+            fill="#936285"
+        />
+    </svg>
+</div>
 
-</body>
+    <!-- Contenuto principale -->
+    <div class="contenuto-inizio">
+
+        <!-- Titolo centrale -->
+        <div class="titolo-principale">
+            <h1 id="h1_1">Cantina e Ristorante</h1>
+            <h2 id="h2_1">Tre Fratelli</h2>
+        </div>
+
+        <!-- Griglia: testo + bottiglia -->
+        <div class="griglia-inizio">
+
+            <!-- Colonna sinistra - testo -->
+            <div class="colonna-testo">
+                <h3 class="titolo-inizio" id="h3_1">Inizio</h3>
+
+                <p class="testo-poetico" id="p_1">
+                    "Si dice che tra le colline ombreggiate di Tre Fratelli, quando il sole ci saluta e il vento sussurra tra le viti, nasca il suono della cantina.<br><br>
+                    Non è solo lo scoppiettio dell'uva matura, né l'eco delle mani che la raccolgono: è qualcosa di più antico.
+                    È il respiro della terra. Il mormorio del tempo. Il vino prima di essere vino.<br><br>
+                    Tre Fratelli non produce bottiglie. Risveglia ricordi.<br>
+                    Ogni annata è un frammento di eternità imbottigliato tra silenzio e aroma."
+                </p>
+
+                <!-- Pulsante freccia -->
+               
+            </div>
+
+            <!-- Colonna destra - bottiglia -->
+            <div class="colonna-bottiglia">
+                <img src="imagens/Nerodavola.png" alt="Bottiglia Tre Fratelli" class="img-bottiglia">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SLIDE 2 — COLTIVAZIONE  -->
+<<section id="coltivazione" class="slide-coltivazione">
+
+    <!-- Intestazione: titolo a sinistra + immagine a destra -->
+    <div class="header-coltivazione">
+        
+        <!-- Colonna sinistra -->
+        <div class="info-coltivazione">
+            <h2 class="titolo-coltivazione" id="h1_2">coltivazione</h2>
+            <p class="sottotitolo-coltivazione" id="p_2">Le fondamenta del sapore</p>
+        </div>
+
+        <!-- Immagine a destra -->
+        <img src="imagens/coltivazione.png" alt="Vigneto" class="img-vigneto">
+
+    </div>
+
+    <div class="griglia-coltivazione">
+
+    <div class="blocco-testo">
+        <h3 id="h3_2">Qualità del suolo</h3>
+        <p id="p_3">
+            Un terreno sano e ricco di minerali nutre le viti in profondità.
+            L'uva assorbe qualità uniche modellando complessità e struttura.
+            Il terreno diventa la base invisibile su cui la crescita prospera,
+            definendo gusto e aroma per generazioni.
+        </p>
+    </div>
+
+    <div class="blocco-testo">
+        <h3 id="h3_3">Assistenza stagionale</h3>
+        <p id="p_4">
+            Potatura attenta, monitoraggio e irrigazione mantengono le viti in equilibrio.
+            L'attenzione qualificata garantisce frutti sani, piante forti e raccolti eccellenti.
+        </p>
+    </div>
+
+    <div class="blocco-testo">
+        <h3 id="h3_4">Equilibrio naturale</h3>
+        <p id="p_5">
+            La biodiversità arricchisce i vigneti attirando insetti e fauna utile.
+            Il rispetto degli ecosistemi sostiene il territorio e garantisce sostenibilità futura.
+        </p>
+    </div>
+
+<div class="imagem-texto-bloco">
+              <img src="imagens/Logo Completa.png" alt="Logo">
+              <p id="p_6" style="color: white !important;">Timmerman Vineyard</p>
+            </div>
+
+    <!-- Uva decorativa -->
+    <img src="imagens/uvas-esquerda.png" alt="" class="uva-decorativa-sinistra">
+    <img src="imagens/uvas-direita.png" alt="" class="uva-decorativa-destra">
+
+    <!-- Pulsante avanti -->
+  
+
+</section>
+
+<footer class="site-footer">
+    <div class="footer-bottom">
+        &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+</footer>
+
+<!-- SCRIPT TRADUZIONE (non modificare) -->
 <script>
 const i18n = {
     it: {
@@ -152,33 +202,20 @@ const i18n = {
         btn_2: "<span class='fi fi-it'></span> It",
         btn_3: "<span class='fi fi-gb'></span> En-Uk",
         btn_4: "<span class='fi fi-br'></span> Pt-Br",
-
         h1_1: "Cantina e Ristorante",
         h2_1: "Tre Fratelli",
-        h3_1: "inizio",
-
-        p_1: `“Si dice che tra le colline ombreggiate di Tre Fratelli, quando il sole ci saluta e il vento sussurra
-        tra le viti, nasca il suono della cantina.<br><br>
-        Non è solo lo scoppiettio dell'uva matura, né l'eco delle mani che la raccolgono: è qualcosa di più antico.
-        È il respiro della terra. Il mormorio del tempo. Il vino prima di essere vino.<br><br>
-        Tre Fratelli non produce bottiglie. Risveglia ricordi.<br>
-        Ogni annata è un frammento di eternità imbottigliato tra silenzio e aroma.”`,
-
-        h1_2: "coltivazione",
+        h3_1: "Inizio",
+        p_1: `"Si dice che tra le colline ombreggiate di Tre Fratelli, quando il sole ci saluta e il vento sussurra tra le viti, nasca il suono della cantina.<br><br>Non è solo lo scoppiettio dell'uva matura, né l'eco delle mani che la raccolgono: è qualcosa di più antico. È il respiro della terra. Il mormorio del tempo. Il vino prima di essere vino.<br><br>Tre Fratelli non produce bottiglie. Risveglia ricordi.<br>Ogni annata è un frammento di eternità imbottigliato tra silenzio e aroma."`,
+        h1_2: "Coltivazione",
         p_2: "Le fondamenta del sapore",
-
         h3_2: "Qualità del suolo",
         p_3: "Un terreno sano e ricco di minerali nutre le viti in profondità. L'uva assorbe qualità uniche modellando complessità e struttura. Il terreno diventa la base invisibile su cui la crescita prospera, definendo gusto e aroma per generazioni.",
-
         h3_3: "Assistenza stagionale",
         p_4: "Potatura attenta, monitoraggio e irrigazione mantengono le viti in equilibrio. L'attenzione qualificata garantisce frutti sani, piante forti e raccolti eccellenti.",
-
         h3_4: "Equilibrio naturale",
         p_5: "La biodiversità arricchisce i vigneti attirando insetti e fauna utile. Il rispetto degli ecosistemi sostiene il territorio e garantisce sostenibilità futura.",
-
         p_6: "Timmerman Vineyard"
     },
-
     en_uk: {
         titulo: "Tre Fratelli Winery and Restaurant",
         flag: "<span class='fi fi-gb'></span>",
@@ -186,33 +223,20 @@ const i18n = {
         btn_2: "<span class='fi fi-it'></span> It",
         btn_3: "<span class='fi fi-gb'></span> En-Uk",
         btn_4: "<span class='fi fi-br'></span> Pt-Br",
-
         h1_1: "Winery and Restaurant",
         h2_1: "Tre Fratelli",
-        h3_1: "beginning",
-
-        p_1: `“It is said that among the shaded hills of Tre Fratelli, when the sun bids us farewell and the wind
-        whispers through the vineyards, the sound of the cellar is born.<br><br>
-        It is not just the crackle of ripe grapes, nor the echo of the hands that harvest them — it is something older.
-        It is the breath of the earth. The murmur of time. The wine before becoming wine.<br><br>
-        Tre Fratelli does not produce bottles. It awakens memories.<br>
-        Each vintage is a fragment of eternity bottled between silence and aroma.”`,
-
-        h1_2: "cultivation",
+        h3_1: "Beginning",
+        p_1: `"It is said that among the shaded hills of Tre Fratelli, when the sun bids us farewell and the wind whispers through the vineyards, the sound of the cellar is born.<br><br>It is not just the crackle of ripe grapes, nor the echo of the hands that harvest them — it is something older. It is the breath of the earth. The murmur of time. The wine before becoming wine.<br><br>Tre Fratelli does not produce bottles. It awakens memories.<br>Each vintage is a fragment of eternity bottled between silence and aroma."`,
+        h1_2: "Cultivation",
         p_2: "The foundations of flavour",
-
         h3_2: "Soil quality",
         p_3: "A healthy soil rich in minerals nourishes the vines deeply. The grapes absorb unique qualities, shaping complexity and structure. The earth becomes the invisible foundation on which growth thrives, defining taste and aroma for generations.",
-
         h3_3: "Seasonal care",
         p_4: "Thoughtful pruning, monitoring, and irrigation keep the vines balanced. Skilled attention ensures healthy fruit, strong plants, and excellent harvests.",
-
         h3_4: "Natural balance",
         p_5: "Biodiversity enriches the vineyards, attracting useful insects and fauna. Respect for ecosystems preserves the land and ensures future sustainability.",
-
         p_6: "Timmerman Vineyard"
     },
-
     pt_br: {
         titulo: "Vinícola e Restaurante Tre Fratelli",
         flag: "<span class='fi fi-br'></span>",
@@ -220,59 +244,43 @@ const i18n = {
         btn_2: "<span class='fi fi-it'></span> It",
         btn_3: "<span class='fi fi-gb'></span> En-Uk",
         btn_4: "<span class='fi fi-br'></span> Pt-Br",
-
         h1_1: "Vinícola e Restaurante",
         h2_1: "Tre Fratelli",
-        h3_1: "início",
-
-        p_1: `“Dizem que entre as colinas sombreadas de Tre Fratelli, quando o sol se despede e o vento sussurra
-        entre as videiras, nasce o som da adega.<br><br>
-        Não é apenas o estalar das uvas maduras, nem o eco das mãos que as colhem — é algo mais antigo.
-        É o respiro da terra. O sussurro do tempo. O vinho antes de ser vinho.<br><br>
-        A Tre Fratelli não produz garrafas. Ela desperta memórias.<br>
-        Cada safra é um fragmento de eternidade engarrafado entre silêncio e aroma.”`,
-
-        h1_2: "cultivo",
+        h3_1: "Início",
+        p_1: `"Dizem que entre as colinas sombreadas de Tre Fratelli, quando o sol se despede e o vento sussurra entre as videiras, nasce o som da adega.<br><br>Não é apenas o estalar das uvas maduras, nem o eco das mãos que as colhem — é algo mais antigo. É o respiro da terra. O sussurro do tempo. O vinho antes de ser vinho.<br><br>A Tre Fratelli não produz garrafas. Ela desperta memórias.<br>Cada safra é um fragmento de eternidade engarrafado entre silêncio e aroma."`,
+        h1_2: "Cultivo",
         p_2: "Os alicerces do sabor",
-
         h3_2: "Qualidade do solo",
         p_3: "Um solo saudável e rico em minerais nutre profundamente as videiras. A uva absorve qualidades únicas que moldam complexidade e estrutura. A terra torna-se a base invisível onde o crescimento prospera, definindo sabor e aroma por gerações.",
-
         h3_3: "Cuidado sazonal",
         p_4: "Poda cuidadosa, monitoramento e irrigação mantêm as videiras em equilíbrio. A atenção técnica garante frutos saudáveis, plantas fortes e colheitas excelentes.",
-
         h3_4: "Equilíbrio natural",
         p_5: "A biodiversidade enriquece os vinhedos ao atrair insetos e fauna benéfica. O respeito aos ecossistemas preserva o território e garante sustentabilidade futura.",
-
         p_6: "Vinhedo Timmerman"
     }
 };
 
-
- function setLanguage(lang) {
+function setLanguage(lang) {
     const elements = document.querySelectorAll('[id]');
     const translations = i18n[lang];
-
     elements.forEach(el => {
-      const key = el.id;
-      if (translations[key]) {
-        if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
-          el.innerHTML = translations[key];
-        } else {
-          el.textContent = translations[key];
+        const key = el.id;
+        if (translations[key]) {
+            if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+                el.innerHTML = translations[key];
+            } else {
+                el.textContent = translations[key];
+            }
         }
-      }
     });
-
     localStorage.setItem('lang', lang);
-  }
+}
 
-
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('lang') || 'it';
     setLanguage(savedLang);
-  });
+});
 </script>
 
+</body>
 </html>
-

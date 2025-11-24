@@ -11,154 +11,248 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
-<body>
+<body class="attrazioni-page">
 
     <!-- HEADER -->
     <header>
         <div class="language-selector">
-            <button class="lang-btn" id="btn_1">
-              <span id="flag"></span>
-              <span id="langName">It</span>
-              <i class="ph-fill ph-triangle" id="lang-arrow"></i>
-            </button>
-
-            <div class="lang-dropdown">
-                <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
-                <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
-                <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
-            </div>
-        </div>
-
-        <div class="header-icons">
-            <button class="navegacao-btn">
-                <i class="ph-fill ph-map-pin"></i>
-            </button>
-            <div class="top-menu-icons">
-                <a href="Storia.html"><i class="ph-fill ph-hourglass-low"></i></a>
-                <a href="AttrazioniTuristiche.html"><i class="ph-fill ph-map-pin"></i></a>
-                <a href="index.html"><i class="ph-fill ph-house"></i></a>
-                <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a>
-                <a href="Cardapio.html"><i class="ph-fill ph-fork-knife"></i></a>
-                <a href="chatbot.html"><i class="ph-fill ph-robot"></i></a>
-            </div>
-        </div>
-        <p><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo">Tre Fratelli</p>
+    <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
+      <span id="flag"></span>
+      <span id="langName">It</span>
+      <i class="ph-fill ph-triangle" id="lang-arrow"></i>
+    </button>
+    <div class="lang-dropdown" id="langMenu">
+      <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
+      <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
+      <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
+    </div>
+  </div>
+  <div class="header-icons">
+    <button class="navegacao-btn">
+      <i class="ph-fill ph-map-pin"></i>
+    </button>
+    <div class="top-menu-icons">
+      <div class="big-circle"></div>
+      <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin branco"></i></a>
+      <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+      <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+      <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+      <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+      <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
+    </div>
+  </div>
+  <div class="sup-direita">
+    <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+    <div class="texto-ao-lado">
+      <p>Tre Fratelli</p>
+    </div>
+  </div>
     </header>
+    <div class="avancar-pagina">
+    <a href="vini.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
 
-    <!-- INTRODUZIONE -->
-    <h1 id="h1_1">Atrazioni turistiche</h1>
+    <!-- TITULO PRINCIPAL -->
+    <h1 id="h1_1">Attrazioni turistiche</h1>
+
+    <!-- INTRODUZIONE COM LAYOUT GRID -->
     <section class="intro-attractions">
-        <h2 id="h2_1">Atrazioni turistiche</h2>
-        <p id="p_1">
-            Tirano - con circa 10.000 abitanti - è una cittadina situata nella Valtellina,
-            a pochi chilometri dal confine svizzero. Conosciuta per la sua ricca eredità
-            culturale, i vigneti storici e i panorami alpini mozzafiato, è un punto di
-            partenza ideale per esplorare la Lombardia e la Svizzera meridionale.
-        </p>
+        <div class="intro-layout">
+            <div class="intro-text">
+                <h2 id="h2_1">Attrazioni turistiche</h2>
+                <p id="p_1">
+                    Tirano - con circa 10.000 abitanti - è una cittadina situata nella Valtellina,
+                    a pochi chilometri dal confine svizzero. Conosciuta per la sua ricca eredità 
+                    culturale, i vigneti storici e i panorami alpini mozzafiato, è un punto di
+                    partenza ideale per esplorare la Lombardia e la Svizzera meridionale.
+                </p>
+            </div>
 
-        <div class="gallery-row">
-            <img src="imagens/santuario.jpg" alt="Chiesa">
-            <img src="imagens/strada.jpg" alt="Vigneti">
-        </div>
-
-        <div class="gallery-row">
-            <img src="imagens/atrazzione3.png" alt="Bernina Express">
-            <img src="imagens/atrazzione4.jpg" alt="Vigneti 2">
+            <div class="intro-gallery">
+                <div class="gallery-row">
+                    <img src="imagens/santuario.jpg" alt="Santuario">
+                    <img src="imagens/lago.jpg" alt="Lago">
+                </div>
+                <div class="gallery-row">
+                    <img src="imagens/bertinaexpress.jpg" alt="Bernina Express">
+                    <img src="imagens/atrazzione4.jpg" alt="Vigneti">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- PRINCIPALI ITINERARI -->
+    <!-- TITULO ITINERARI -->
     <section class="main-title">
-        <h2 id="h2_2">Principali Itinerari Turistici</h2>
+        <h2 id="h2_2">Principali itinerari turistici</h2>
     </section>
 
-    <!-- BERNINA EXPRESS -->
-    <section class="itinerary bernina-section">
-        <h3 id="h3_1">Bernina Express (Patrimonio Mondiale dell'UNESCO)</h3>
-        <ul id="ul_1">
-            <li>Percorso: Tirano → St. Moritz (Svizzera)</li>
-            <li>Un viaggio spettacolare attraverso le Alpi.</li>
-            <li>Punto di partenza: Stazione ferroviaria di Tirano.</li>
-            <li>Consiglio: Ideale per una gita di un giorno.</li>
-        </ul>
-    </section>
+    <!-- ITINERARIOS COM IMAGENS E TEXTO -->
+    <div class="itineraries-wrapper">
+        <!-- BERNINA EXPRESS -->
+        <div class="itinerary-block">
+            <div class="itinerary-text">
+                <h3 id="h3_1">Bernina Express (Patrimonio Mondiale dell'UNESCO)</h3>
+                <ul id="ul_1">
+                    <li>Percorso: Tirano → St. Moritz (Svizzera)</li>
+                    <li>Un viaggio spettacolare attraverso le Alpi</li>
+                    <li>Punto di partenza: Stazione ferroviaria di Tirano</li>
+                    <li>Consiglio: Ideale per una gita di un giorno</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/atrazzione3.png" alt="Bernina Express">
+            </div>
+        </div>
 
-    <!-- STRADA PANORAMICA DELLA VALTELLINA -->
-    <section class="itinerary strada-valtellina">
-        <h3 id="h3_2">Strada Panoramica della Valtellina</h3>
-        <ul id="ul_2">
-            <li>Percorso: Tirano → Bormio → Passo dello Stelvio</li>
-            <li>Attraversa vigneti, montagne e villaggi alpini.</li>
-            <li>Ideale per ciclisti e motociclisti.</li>
-        </ul>
-    </section>
+        <!-- STRADA PANORAMICA -->
+        <div class="itinerary-block right-img">
+            <div class="itinerary-text">
+                <h3 id="h3_2">Strada Panoramica della Valtellina</h3>
+                <ul id="ul_2">
+                    <li>Percorso: Tirano → Bormio → Passo dello Stelvio</li>
+                    <li>Attraversa vigneti, montagne e villaggi alpini</li>
+                    <li>Ideale per ciclisti e motociclisti</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+            </div>
+        </div>
 
-    <!-- STRADA DEI VINI DELLA VALTELLINA -->
-    <section class="itinerary strada-vini">
-        <h3 id="h3_3">Strada dei Vini della Valtellina</h3>
-        <ul id="ul_3">
-            <li>Regione produttrice del Nebbiolo (Chiavennasca).</li>
-            <li>Cantine visitabili a Sondrio, Teglio e Chiuro.</li>
-            <li>Vini tipici: Sassella, Grumello, Inferno, Valgella.</li>
-            <li>Abbinamenti consigliati: formaggi locali.</li>
-        </ul>
-    </section>
+        <!-- STRADA DEI VINI -->
+        <div class="itinerary-block">
+            <div class="itinerary-text">
+                <h3 id="h3_3">Strada dei Vini della Valtellina</h3>
+                <ul id="ul_3">
+                    <li>Regione produttrice del Nebbiolo (Chiavennasca)</li>
+                    <li>Cantine visitabili a Sondrio, Teglio e Chiuro</li>
+                    <li>Vini tipici: Sassella, Grumello, Inferno, Valgella</li>
+                    <li>Abbinamenti consigliati: formaggi locali</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/strada.jpg" alt="Vigneti">
+            </div>
+        </div>
 
-    <!-- LAGO DI POSCHIAVO -->
-    <section class="itinerary poschiavo">
-        <h3 id="h3_4">Lago di Poschiavo (Svizzera)</h3>
-        <ul id="ul_4">
-            <li>A soli 20 minuti da Tirano.</li>
-            <li>Lago alpino dalle acque cristalline.</li>
-            <li>Ideale per passeggiate e natura.</li>
-        </ul>
-    </section>
+        <!-- LAGO DI POSCHIAVO -->
+        <div class="itinerary-block right-img">
+            <div class="itinerary-text">
+                <h3 id="h3_4">Lago di Poschiavo (Svizzera)</h3>
+                <ul id="ul_4">
+                    <li>A soli 20 minuti da Tirano</li>
+                    <li>Lago alpino dalle acque cristalline</li>
+                    <li>Ideale per passeggiate e natura</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/lago.jpg" alt="Lago Poschiavo">
+            </div>
+        </div>
 
-    <!-- SANTUARIO DELLA MADONNA DI TIRANO -->
-    <section class="itinerary santuario-tirano">
-        <h3 id="h3_5">Santuario della Madonna di Tirano</h3>
-        <ul id="ul_5">
-            <li>Distanza: 5 minuti a piedi dal centro.</li>
-            <li>Costruzione del XVI secolo.</li>
-            <li>Ricca architettura e organo storico.</li>
-        </ul>
-    </section>
+        <!-- SANTUARIO -->
+        <div class="itinerary-block">
+            <div class="itinerary-text">
+                <h3 id="h3_5">Santuario della Madonna di Tirano</h3>
+                <ul id="ul_5">
+                    <li>Distanza: 5 minuti a piedi dal centro</li>
+                    <li>Costruzione del XVI secolo</li>
+                    <li>Ricca architettura e organo storico</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/santuario.jpg" alt="Santuario">
+            </div>
+        </div>
 
-    <!-- SENTIERI E NATURA -->
-    <section class="itinerary sentieri">
-        <h3 id="h3_6">Sentieri e Natura</h3>
-        <ul id="ul_6">
-            <li>Val Grosina: area montana con rifugi alpini.</li>
-            <li>Parco Nazionale dello Stelvio: circa 1 ora in auto — offre trekking, fauna alpina e panorami spettacolari</li>
-        </ul>
-    </section>
+        <!-- SENTIERI E NATURA -->
+        <div class="itinerary-block right-img">
+            <div class="itinerary-text">
+                <h3 id="h3_6">Sentieri e Natura</h3>
+                <ul id="ul_6">
+                    <li>Val Grosina: area montana con rifugi alpini</li>
+                    <li>Parco Nazionale dello Stelvio: circa 1 ora in auto – offre trekking, fauna alpina e panorami spettacolari</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/natura.png" alt="Natura">
+            </div>
+        </div>
 
-    <!-- GASTRONOMIA -->
-    <section class="itinerary gastronomia">
-        <h3 id="h3_7">Gastronomia Locale</h3>
-        <ul id="ul_7">
-            <li>Piatti tipici: Pizzoccheri della Valtellina, Sciatt (frittelle di formaggio), e Bresaola.</li>
-        </ul>
+        <!-- GASTRONOMIA -->
+        <div class="itinerary-block">
+            <div class="itinerary-text">
+                <h3 id="h3_7">Gastronomia Locale</h3>
+                <ul id="ul_7">
+                    <li>Piatti tipici: Pizzoccheri della Valtellina, Sciatt (frittelle di formaggio), e Bresaola</li>
+                </ul>
+                <h3 id="h3_8" style="margin-top: 20px;">Ristoranti consigliati</h3>
+                <ul id="ul_8">
+                    <li>Trattoria Valtellinese - cucina locale autentica</li>
+                    <li>Ristorante Merizzi - ottima scelta vicino al centro</li>
+                    <li>Caffè de la Posta - caffè storico</li>
+                    <li>Cantina e Ristorante Tre Fratelli</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/gastronomia.png" alt="Gastronomia">
+            </div>
+        </div>
 
-        <h3 id="h3_8">Ristoranti consigliati</h3>
-        <ul id="ul_8">
-            <li>Trattoria Valtellinese - cucina locale autentica</li>
-            <li>Ristorante Merizzi - ottima scelta vicino al centro</li>
-            <li>Caffè de la Posta - caffè storico</li>
-            <li>Cantina e Ristorante Tre Fratelli</li>
-        </ul>
-    </section>
+        <!-- CONSIGLI DI ACCESSO -->
+        <div class="itinerary-block right-img">
+            <div class="itinerary-text">
+                <h3 id="h3_9">Consigli di Accesso</h3>
+                <ul id="ul_9">
+                    <li>Da Milano: circa 2 ore e 30 in treno (via Lecco-Sondrio-Tirano)</li>
+                    <li>Da St. Moritz (Svizzera): 2 ore con il treno panoramico (Bernina Express)</li>
+                    <li>Da Bormio: 1 ora in auto lungo la SS38</li>
+                </ul>
+            </div>
+            <div class="itinerary-img">
+                <img src="imagens/acesso.png" alt="Acesso">
+            </div>
+        </div>
+    </div>
+    <style>.avancar-pagina2 {
+text-align: right;
+  margin-bottom: 20px;
+  margin-right: 20px;  /* distância do fundo */
+  right: 20px;    /* distância da direita */
+  z-index: 999;
+}
 
-    <!-- CONSIGLI DI ACCESSO -->
-    <section class="itinerary accesso">
-        <h3 id="h3_9">Consigli di Accesso</h3>
-        <ul id="ul_9">
-            <li>Da Milano: circa 2 ore e 30 in treno (via Lecco-Sondrio-Tirano).</li>
-            <li>Da St. Moritz (Svizzera): 2 ore con il treno panoramico (Bernina Express).</li>
-            <li>Da Bormio: 1 ora in auto lungo la SS38.</li>
-        </ul>
-    </section>
+.avancar-pagina2 a svg {
+  cursor: pointer;
+  color: #000; /* opcional */
+  transition: transform 0.2s;
+    color: lightgreen;   /* garante que fique por cima de outros elementos */
 
+}
+
+.avancar-pagina2 a svg:hover {
+  transform: scale(1.1);
+}
+</style>
+    <div class="avancar-pagina2">
+    <a href="FALTA A PAGINA DO ITINERARIO TURISTICO.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle"  viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
+<footer class="site-footer">
+    <div class="footer-bottom">
+        &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+</footer>
 </body>
 
 <script>
@@ -171,49 +265,49 @@ const i18n = {
     btn_3: "<span class='fi fi-gb'></span> En-Uk",
     btn_4: "<span class='fi fi-br'></span> Pt-Br",
 
-    h1_1: "Atrazioni turistiche",
-    h2_1: "Atrazioni turistiche",
+    h1_1: "Attrazioni turistiche",
+    h2_1: "Attrazioni turistiche",
     p_1: `Tirano - con circa 10.000 abitanti - è una cittadina situata nella Valtellina,
-          a pochi chilometri dal confine svizzero. Conosciuta per la sua ricca eredità
+          a pochi chilometri dal confine svizzero. Conosciuta per la sua ricca eredità 
           culturale, i vigneti storici e i panorami alpini mozzafiato, è un punto di
           partenza ideale per esplorare la Lombardia e la Svizzera meridionale.`,
-    h2_2: "Principali Itinerari Turistici",
+    h2_2: "Principali itinerari turistici",
     h3_1: "Bernina Express (Patrimonio Mondiale dell'UNESCO)",
     ul_1: `<li>Percorso: Tirano → St. Moritz (Svizzera)</li>
-           <li>Un viaggio spettacolare attraverso le Alpi.</li>
-           <li>Punto di partenza: Stazione ferroviaria di Tirano.</li>
-           <li>Consiglio: Ideale per una gita di un giorno.</li>`,
+           <li>Un viaggio spettacolare attraverso le Alpi</li>
+           <li>Punto di partenza: Stazione ferroviaria di Tirano</li>
+           <li>Consiglio: Ideale per una gita di un giorno</li>`,
     h3_2: "Strada Panoramica della Valtellina",
     ul_2: `<li>Percorso: Tirano → Bormio → Passo dello Stelvio</li>
-           <li>Attraversa vigneti, montagne e villaggi alpini.</li>
-           <li>Ideale per ciclisti e motociclisti.</li>`,
+           <li>Attraversa vigneti, montagne e villaggi alpini</li>
+           <li>Ideale per ciclisti e motociclisti</li>`,
     h3_3: "Strada dei Vini della Valtellina",
-    ul_3: `<li>Regione produttrice del Nebbiolo (Chiavennasca).</li>
-           <li>Cantine visitabili a Sondrio, Teglio e Chiuro.</li>
-           <li>Vini tipici: Sassella, Grumello, Inferno, Valgella.</li>
-           <li>Abbinamenti consigliati: formaggi locali.</li>`,
+    ul_3: `<li>Regione produttrice del Nebbiolo (Chiavennasca)</li>
+           <li>Cantine visitabili a Sondrio, Teglio e Chiuro</li>
+           <li>Vini tipici: Sassella, Grumello, Inferno, Valgella</li>
+           <li>Abbinamenti consigliati: formaggi locali</li>`,
     h3_4: "Lago di Poschiavo (Svizzera)",
-    ul_4: `<li>A soli 20 minuti da Tirano.</li>
-           <li>Lago alpino dalle acque cristalline.</li>
-           <li>Ideale per passeggiate e natura.</li>`,
+    ul_4: `<li>A soli 20 minuti da Tirano</li>
+           <li>Lago alpino dalle acque cristalline</li>
+           <li>Ideale per passeggiate e natura</li>`,
     h3_5: "Santuario della Madonna di Tirano",
-    ul_5: `<li>Distanza: 5 minuti a piedi dal centro.</li>
-           <li>Costruzione del XVI secolo.</li>
-           <li>Ricca architettura e organo storico.</li>`,
+    ul_5: `<li>Distanza: 5 minuti a piedi dal centro</li>
+           <li>Costruzione del XVI secolo</li>
+           <li>Ricca architettura e organo storico</li>`,
     h3_6: "Sentieri e Natura",
-    ul_6: `<li>Val Grosina: area montana con rifugi alpini.</li>
-           <li>Parco Nazionale dello Stelvio: circa 1 ora in auto — offre trekking, fauna alpina e panorami spettacolari</li>`,
+    ul_6: `<li>Val Grosina: area montana con rifugi alpini</li>
+           <li>Parco Nazionale dello Stelvio: circa 1 ora in auto – offre trekking, fauna alpina e panorami spettacolari</li>`,
     h3_7: "Gastronomia Locale",
-    ul_7: `<li>Piatti tipici: Pizzoccheri della Valtellina, Sciatt (frittelle di formaggio), e Bresaola.</li>`,
+    ul_7: `<li>Piatti tipici: Pizzoccheri della Valtellina, Sciatt (frittelle di formaggio), e Bresaola</li>`,
     h3_8: "Ristoranti consigliati",
     ul_8: `<li>Trattoria Valtellinese - cucina locale autentica</li>
            <li>Ristorante Merizzi - ottima scelta vicino al centro</li>
            <li>Caffè de la Posta - caffè storico</li>
            <li>Cantina e Ristorante Tre Fratelli</li>`,
     h3_9: "Consigli di Accesso",
-    ul_9: `<li>Da Milano: circa 2 ore e 30 in treno (via Lecco-Sondrio-Tirano).</li>
-           <li>Da St. Moritz (Svizzera): 2 ore con il treno panoramico (Bernina Express).</li>
-           <li>Da Bormio: 1 ora in auto lungo la SS38.</li>`
+    ul_9: `<li>Da Milano: circa 2 ore e 30 in treno (via Lecco-Sondrio-Tirano)</li>
+           <li>Da St. Moritz (Svizzera): 2 ore con il treno panoramico (Bernina Express)</li>
+           <li>Da Bormio: 1 ora in auto lungo la SS38</li>`
   },
 
   en_uk: {
@@ -233,40 +327,40 @@ const i18n = {
     h2_2: "Main Tourist Itineraries",
     h3_1: "Bernina Express (UNESCO World Heritage Site)",
     ul_1: `<li>Route: Tirano → St. Moritz (Switzerland)</li>
-           <li>A spectacular journey through the Alps.</li>
-           <li>Starting point: Tirano railway station.</li>
-           <li>Tip: Ideal for a day trip.</li>`,
+           <li>A spectacular journey through the Alps</li>
+           <li>Starting point: Tirano railway station</li>
+           <li>Tip: Ideal for a day trip</li>`,
     h3_2: "Valtellina Scenic Road",
     ul_2: `<li>Route: Tirano → Bormio → Stelvio Pass</li>
-           <li>Passes through vineyards, mountains and alpine villages.</li>
-           <li>Ideal for cyclists and motorcyclists.</li>`,
+           <li>Passes through vineyards, mountains and alpine villages</li>
+           <li>Ideal for cyclists and motorcyclists</li>`,
     h3_3: "Valtellina Wine Route",
-    ul_3: `<li>Region producing Nebbiolo (Chiavennasca).</li>
-           <li>Wineries visitable in Sondrio, Teglio and Chiuro.</li>
-           <li>Typical wines: Sassella, Grumello, Inferno, Valgella.</li>
-           <li>Recommended pairings: local cheeses.</li>`,
+    ul_3: `<li>Region producing Nebbiolo (Chiavennasca)</li>
+           <li>Wineries visitable in Sondrio, Teglio and Chiuro</li>
+           <li>Typical wines: Sassella, Grumello, Inferno, Valgella</li>
+           <li>Recommended pairings: local cheeses</li>`,
     h3_4: "Lake Poschiavo (Switzerland)",
-    ul_4: `<li>Only 20 minutes from Tirano.</li>
-           <li>Alpine lake with crystal-clear waters.</li>
-           <li>Ideal for walks and nature.</li>`,
+    ul_4: `<li>Only 20 minutes from Tirano</li>
+           <li>Alpine lake with crystal-clear waters</li>
+           <li>Ideal for walks and nature</li>`,
     h3_5: "Sanctuary of Madonna di Tirano",
-    ul_5: `<li>Distance: 5 minutes on foot from the center.</li>
-           <li>16th century construction.</li>
-           <li>Rich architecture and historic organ.</li>`,
+    ul_5: `<li>Distance: 5 minutes on foot from the center</li>
+           <li>16th century construction</li>
+           <li>Rich architecture and historic organ</li>`,
     h3_6: "Trails and Nature",
-    ul_6: `<li>Val Grosina: mountainous area with alpine refuges.</li>
-           <li>Stelvio National Park: about 1 hour by car — offers trekking, alpine fauna and spectacular landscapes.</li>`,
+    ul_6: `<li>Val Grosina: mountainous area with alpine refuges</li>
+           <li>Stelvio National Park: about 1 hour by car – offers trekking, alpine fauna and spectacular landscapes</li>`,
     h3_7: "Local Cuisine",
-    ul_7: `<li>Typical dishes: Valtellina Pizzoccheri, Sciatt (cheese fritters), and Bresaola.</li>`,
+    ul_7: `<li>Typical dishes: Valtellina Pizzoccheri, Sciatt (cheese fritters), and Bresaola</li>`,
     h3_8: "Recommended Restaurants",
     ul_8: `<li>Trattoria Valtellinese - authentic local cuisine</li>
            <li>Ristorante Merizzi - excellent choice near the center</li>
            <li>Caffè de la Posta - historic café</li>
            <li>Tre Fratelli Winery and Restaurant</li>`,
     h3_9: "Access Tips",
-    ul_9: `<li>From Milan: about 2 hours 30 by train (via Lecco-Sondrio-Tirano).</li>
-           <li>From St. Moritz (Switzerland): 2 hours via panoramic train (Bernina Express).</li>
-           <li>From Bormio: 1 hour by car along SS38.</li>`
+    ul_9: `<li>From Milan: about 2 hours 30 by train (via Lecco-Sondrio-Tirano)</li>
+           <li>From St. Moritz (Switzerland): 2 hours via panoramic train (Bernina Express)</li>
+           <li>From Bormio: 1 hour by car along SS38</li>`
   },
 
   pt_br: {
@@ -286,40 +380,40 @@ const i18n = {
     h2_2: "Principais Itinerários Turísticos",
     h3_1: "Bernina Express (Patrimônio Mundial da UNESCO)",
     ul_1: `<li>Rota: Tirano → St. Moritz (Suíça)</li>
-           <li>Uma viagem espetacular através dos Alpes.</li>
-           <li>Ponto de partida: Estação de trem de Tirano.</li>
-           <li>Dica: Ideal para um passeio de um dia.</li>`,
+           <li>Uma viagem espetacular através dos Alpes</li>
+           <li>Ponto de partida: Estação de trem de Tirano</li>
+           <li>Dica: Ideal para um passeio de um dia</li>`,
     h3_2: "Estrada Panorâmica da Valtellina",
     ul_2: `<li>Rota: Tirano → Bormio → Passo dello Stelvio</li>
-           <li>Atravessa vinhedos, montanhas e aldeias alpinas.</li>
-           <li>Ideal para ciclistas e motociclistas.</li>`,
+           <li>Atravessa vinhedos, montanhas e aldeias alpinas</li>
+           <li>Ideal para ciclistas e motociclistas</li>`,
     h3_3: "Rota dos Vinhos da Valtellina",
-    ul_3: `<li>Região produtora do Nebbiolo (Chiavennasca).</li>
-           <li>Vinícolas visitáveis em Sondrio, Teglio e Chiuro.</li>
-           <li>Vinhos típicos: Sassella, Grumello, Inferno, Valgella.</li>
-           <li>Harmonizações recomendadas: queijos locais.</li>`,
+    ul_3: `<li>Região produtora do Nebbiolo (Chiavennasca)</li>
+           <li>Vinícolas visitáveis em Sondrio, Teglio e Chiuro</li>
+           <li>Vinhos típicos: Sassella, Grumello, Inferno, Valgella</li>
+           <li>Harmonizações recomendadas: queijos locais</li>`,
     h3_4: "Lago Poschiavo (Suíça)",
-    ul_4: `<li>Apenas 20 minutos de Tirano.</li>
-           <li>Lago alpino de águas cristalinas.</li>
-           <li>Ideal para caminhadas e contato com a natureza.</li>`,
+    ul_4: `<li>Apenas 20 minutos de Tirano</li>
+           <li>Lago alpino de águas cristalinas</li>
+           <li>Ideal para caminhadas e contato com a natureza</li>`,
     h3_5: "Santuário da Madonna de Tirano",
-    ul_5: `<li>Distância: 5 minutos a pé do centro.</li>
-           <li>Construção do século XVI.</li>
-           <li>Arquitetura rica e órgão histórico.</li>`,
+    ul_5: `<li>Distância: 5 minutos a pé do centro</li>
+           <li>Construção do século XVI</li>
+           <li>Arquitetura rica e órgão histórico</li>`,
     h3_6: "Trilhas e Natureza",
-    ul_6: `<li>Val Grosina: área montanhosa com refúgios alpinos.</li>
-           <li>Parque Nacional Stelvio: cerca de 1 hora de carro — oferece trilhas, fauna alpina e paisagens espetaculares.</li>`,
+    ul_6: `<li>Val Grosina: área montanhosa com refúgios alpinos</li>
+           <li>Parque Nacional Stelvio: cerca de 1 hora de carro – oferece trilhas, fauna alpina e paisagens espetaculares</li>`,
     h3_7: "Gastronomia Local",
-    ul_7: `<li>Pratos típicos: Pizzoccheri da Valtellina, Sciatt (bolinhos de queijo) e Bresaola.</li>`,
+    ul_7: `<li>Pratos típicos: Pizzoccheri da Valtellina, Sciatt (bolinhos de queijo) e Bresaola</li>`,
     h3_8: "Restaurantes Recomendados",
     ul_8: `<li>Trattoria Valtellinese - cozinha local autêntica</li>
            <li>Ristorante Merizzi - excelente escolha perto do centro</li>
            <li>Caffè de la Posta - café histórico</li>
            <li>Vinícola e Restaurante Tre Fratelli</li>`,
     h3_9: "Dicas de Acesso",
-    ul_9: `<li>De Milão: cerca de 2 horas e 30 de trem (via Lecco-Sondrio-Tirano).</li>
-           <li>De St. Moritz (Suíça): 2 horas de trem panorâmico (Bernina Express).</li>
-           <li>De Bormio: 1 hora de carro pela SS38.</li>`
+    ul_9: `<li>De Milão: cerca de 2 horas e 30 de trem (via Lecco-Sondrio-Tirano)</li>
+           <li>De St. Moritz (Suíça): 2 horas de trem panorâmico (Bernina Express)</li>
+           <li>De Bormio: 1 hora de carro pela SS38</li>`
   }
 };
 

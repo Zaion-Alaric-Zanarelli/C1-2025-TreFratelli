@@ -1,44 +1,1948 @@
-*{
-    margin: 0;
-    border: 0;
-    padding: 0;
+/*
+  CSS CONSOLIDATO
+  Tutte le regole duplicate (come *, body, .top-menu-icons) sono state rimosse,
+  mantenendo solo l’ultima definizione di ogni selettore per garantire che lo stile
+  finale fosse preservato, eliminando qualsiasi ambiguità.
+*/
 
+/* === RESET (Definizione consolidata) === */
+
+html {
+  height: 100%;
+  /* Obbliga l’HTML a riempire l’intera finestra */
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
+* {
+  margin: 0;
+  border: 0;
+  /* Ultima definizione del RESET */
+  padding: 0;
+  box-sizing: border-box;
+  /* ultima definizione del RESET */
 }
 
-/*--- setinha ---*/
-i.ph-triangle{
-    display: inline-block;
-    transform: rotate(90deg);
-    transition: 0.3s ease;
+.video-intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999; /* Sopra tutto il sito */
+    overflow: hidden;
+    animation: hideVideo 8s forwards; 
+    /* 26s = durata del video (modificare secondo il tuo video) */
 }
 
-i.ph-triangle.rotate{
-    transform: rotate(180deg);
+.video-intro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Copre tutto lo schermo senza deformare */
+}
+
+/* ================================
+   ANIMAZIONE — NASCONDE IL VIDEO
+   Dopo il tempo impostato sopra
+   ================================= */
+@keyframes hideVideo {
+    0% { opacity: 1; pointer-events: auto; }
+    99% { opacity: 1; }
+    100% {
+        opacity: 0;
+        pointer-events: none; /* Permette l’interazione con il sito */
+        display: none;
+    }
 }
 
 
-
-/*--- Dropdow menu ---*/
-.top-menu-icons {
-    display: none;
+/* === BODY (Definizione consolidata) === */
+body {
+  font-family: 'Spectral', serif;
+  background-color: #936285;
+  /* Ultimo colore valido */
+  color: #2C2C2C;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.top-menu-icons.show {
-    display: block;
+.site-footer {
+  background-color: #6d2030;
+  /* Colore scuro e professionale (es.: blu navy scuro) */
+  color: #ecf0f1;
+  /* Colore del testo chiaro */
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.9em;
+  color: #bdc3c7;
 }
 
 
+/* === HEADER E MENU A TENDINA === */
+i.ph-triangle {
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: 0.3s ease;
+}
 
-/* -------- dropdown tradução --------- */
+i.ph-triangle.rotate {
+  transform: rotate(180deg);
+}
+
+/* Consolidato: il selettore era duplicato. Manteniamo la regola di mostrare/nascondere. */
+
+.top-menu-icons.show,
+.lang-dropdown.show {
+  display: block;
+}
+
+/* SLIDE 1 - INIZIO */
+.slide-inizio {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Immagine di sfondo */
+.sfondo-vigneto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+}
+
+.sfondo-vigneto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Curva rosa */
+.curva-rosa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curva-rosa svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Contenitore principale */
+.contenuto-inizio {
+  position: relative;
+  z-index: 10;
+  padding: 30px 50px;
+  min-height: 100vh;
+}
+
+/* Titolo centrale */
+.titolo-principale {
+  text-align: center;
+  margin: 20px 0 50px;
+}
+
+.titolo-principale h1,
+.titolo-principale h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.titolo-principale h1 {
+  margin-bottom: 5px;
+}
+
+/* Griglia inizio */
+.griglia-inizio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Colonna testo */
+.colonna-testo {
+  padding-left: 20px;
+}
+
+.titolo-inizio {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #dfff80;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testo-poetico {
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #ffffff;
+  font-style: italic;
+  max-width: 300px;
+}
+
+/* Pulsante freccia */
+.pulsante-freccia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  color: #555;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 25px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.pulsante-freccia:hover {
+  border-color: #4A7C3C;
+  color: #4A7C3C;
+}
+
+/* Colonna bottiglia */
+.colonna-bottiglia {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+}
+
+.img-bottiglia {
+  max-height: 380px;
+  width: auto;
+  z-index: 5;
+  position: relative;
+  transform: rotate(340deg);
+}
+
+/* SLIDE 2 - COLTIVAZIONE */
+.slide-coltivazione {
+  background-color: #936285;
+  padding: 70px 50px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header coltivazione */
+.header-coltivazione {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.info-coltivazione {
+  display: flex;
+  flex-direction: column;
+}
+
+.titolo-coltivazione {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: #dfff80;
+  font-style: italic;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.sottotitolo-coltivazione {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #F5F0E8;
+}
+
+.img-vigneto {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 10px;
+  justify-self: end;
+}
+
+/* Griglia coltivazione */
+.griglia-coltivazione {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.7fr;
+  gap: 30px;
+  align-items: start;
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+.blocco-testo {
+  max-width: 280px;
+}
+
+.blocco-testo h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.blocco-testo p {
+  font-family: 'Spectral', serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #F5F0E8;
+}
+
+/* Logo */
+.colonna-logo {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.colonna-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.colonna-logo p {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #C4A070;
+  font-style: italic;
+}
+
+/* Uva decorativa */
+.uva-decorativa-sinistra,
+.uva-decorativa-destra {
+  position: absolute;
+  bottom: 80px;
+  width: 200px;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.uva-decorativa-sinistra {
+  left: -60px;
+  transform: rotate(15deg);
+}
+
+.uva-decorativa-destra {
+  right: -40px;
+  transform: rotate(-10deg);
+}
+
+/* Pulsante avanti */
+.pulsante-avanti {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #F5F0E8;
+  border-radius: 50%;
+  color: #F5F0E8;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 40px;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.pulsante-avanti:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Piede pagina */
+.piede-pagina {
+  text-align: center;
+  padding: 50px 20px 20px;
+  color: #2C2C2C;
+  font-size: 14px;
+  z-index: 5;
+}
+
+/* PAGINA CHATBOT */
+.chatbot {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #64405a 0%, #9c6d77 50%, #9c6d77 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.chatbot header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.chatbot-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 150px);
+  padding: 40px;
+  z-index: 5;
+}
+
+/* Titolo chatbot */
+.chatbot-title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.chatbot-title h1,
+.chatbot-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.chatbot-title h1 {
+  color: #F5F0E8;
+  margin-bottom: 10px;
+}
+
+.chatbot-title h2 {
+  color: #763b51;
+  font-style: italic;
+}
+
+/* Input chatbot */
+.chatbot-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 750px;
+  z-index: 10;
+}
+
+.add-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #E8A4C4;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.add-btn::before {
+  content: "+";
+  font-weight: 300;
+}
+
+.add-btn:hover {
+  background: #D4899B;
+}
+
+.chatbot-input-wrapper {
+  flex: 1;
+  background: #D4C4C9;
+  border-radius: 35px;
+  padding: 8px 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatbot-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: #4A3542;
+  padding: 14px;
+}
+
+.chatbot-input::placeholder {
+  color: #6A5560;
+  font-style: italic;
+}
+
+.mic-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: #4A3542;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-btn:hover {
+  color: #8B3A5C;
+}
+
+.send-btn {
+  width: 50px;
+  height: 50px;
+  background: #E8A4C4;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.send-btn::before {
+  content: "↑";
+  font-weight: bold;
+}
+
+.send-btn:hover {
+  background: #D4899B;
+}
+
+/* Immagini decorative chatbot */
+.chatbot-grapes-left,
+.chatbot-grapes-right {
+  position: absolute;
+  bottom: 0;
+  width: 250px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.3;
+  border-radius: 70px;
+}
+
+.chatbot-grapes-left {
+  left: 0;
+  transform: rotate(20deg);
+}
+
+.chatbot-grapes-right {
+  right: 0;
+  transform: rotate(340deg);
+}
+
+/* PAGINA MENU */
+
+/* Container principale */
+.menu-page {
+  background-color: #936285;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* Sezione menu */
+.menu-section {
+  margin-bottom: 80px;
+}
+
+/* Titolo hero */
+.menu-hero {
+  margin-bottom: 40px;
+}
+
+.menu-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #dfff80;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  text-transform: lowercase;
+}
+
+.menu-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #F5F0E8;
+  font-style: italic;
+}
+
+/* Layout menu: immagine + lista */
+.menu-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Layout invertito (immagine a destra) */
+.menu-layout.reverse {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+/* Immagine menu */
+.menu-image {
+  width: 100%;
+  position: relative;
+}
+
+.menu-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+/* Lista menu */
+.menu-list {
+  padding: 20px;
+}
+
+/* Intestazione delle colonne */
+.menu-column-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.col-piatti,
+.col-armonia {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #F5F0E8;
+}
+
+/* Voce di menu */
+
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #F5F0E8;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.menu-item .suggest {
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.menu-item p {
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #F5F0E8;
+}
+
+.menu-item hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 20px 0;
+}
+
+/* Pulsante freccia avanti (circolare) */
+.next-section {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #dfff80;
+  border-radius: 50%;
+  color: #dfff80;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 30px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.next-section::before {
+  content: "→";
+  font-weight: bold;
+}
+
+.next-section:hover {
+  background: rgba(223, 255, 128, 0.15);
+  transform: scale(1.1);
+}
+
+/* Sezione bevande */
+#bevande {
+  padding: 60px 40px;
+}
+
+#bevande h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #dfff80;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Tabella bevande */
+.beverages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.beverages-table thead {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.beverages-table th {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #F5F0E8;
+  padding: 15px;
+  text-align: left;
+}
+
+.beverages-table td {
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  color: #F5F0E8;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.beverages-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Sezione informazioni */
+#info {
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #dfff80;
+  margin-bottom: 20px;
+}
+
+#info p,
+#info li {
+  font-family: 'Spectral', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #F5F0E8;
+  margin-bottom: 15px;
+}
+
+#info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#info li {
+  padding: 8px 0;
+}
+
+/* Sezione prenotazione */
+#prenotazione {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+#prenotazione h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #dfff80;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+
+#step1,
+#step2,
+#step3 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#prenotazione label {
+  font-family: 'Spectral', serif;
+  font-size: 16px;
+  color: #F5F0E8;
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+#prenotazione input,
+#prenotazione select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #F5F0E8;
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+}
+
+#prenotazione button {
+  padding: 12px 40px;
+  margin: 20px 10px;
+  border: 2px solid #dfff80;
+  border-radius: 25px;
+  background: transparent;
+  color: #dfff80;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#prenotazione button:hover {
+  background: #dfff80;
+  color: #936285;
+}
+
+/* --- Stili generali (colore di sfondo) --- */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottle-img {
+  float: right;
+  margin-top: -200px;
+}
+
+.bottle-img1 {
+  float: right;
+  margin-top: -200px;
+  width: 40px;
+}
+
+#h1_1 {
+  margin-top: 70px !important;
+}
+
+/* -------- dropdown traduzione --------- */
+.language-selector {
+  position: fixed;
+  display: inline-block;
+  z-index: 100000;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #6d2030;
+  border: 1px solid #8a2f43;
+  border-radius: 16px;
+  padding: 6px 12px;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 20;
+}
+
+.lang-btn i {
+  font-size: 12px;
+  margin-left: 4px;
+  opacity: 0.9;
+}
+
+/* Menu a tendina */
 .lang-dropdown {
-    display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background-color: #6d2030;
+  border: 1px solid #8a2f43;
+  border-radius: 12px;
+  margin-top: 0px;
+  margin-left: 20px;
+  display: none;
+  flex-direction: column;
+  z-index: 15;
+  min-width: 120px;
 }
 
 .lang-dropdown.show {
-    display: block;
+  display: flex;
+}
+
+.lang-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lang-dropdown button:hover {
+  background-color: #581a27;
+  border-radius: 8px;
+}
+
+/* Bandiere */
+.fi {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+/* ========================= */
+/*     PULSANTE DI MENU FISSO     */
+/* ========================= */
+
+/* =========================
+  MENU RADIALE — STILI FINALI
+  ========================= */
+
+/* contenitore fisso in alto (pulsante) */
+.header-icons {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 240px;
+  height: 120px;
+  pointer-events: none;
+}
+
+/* Pulsante principale (centro del semicerchio) */
+.navegacao-btn {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translate(-50%, 0);
+  width: 58px;
+  height: 58px;
+  background-color: #4c0c19;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  transition: transform .30s ease;
+  pointer-events: auto;
+  z-index: 1010;
+}
+
+
+
+/* piccolo effetto quando è aperto */
+.navegacao-btn.open {
+  transform: translate(-30%, 0) rotate(16deg) scale(1.03);
+}
+
+/* Cerchio grande — posizionato in modo che “tagli” il bordo superiore della pagina */
+.top-menu-icons {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+
+/* Cerchio di sfondo (scuro) */
+.big-circle {
+  position: absolute;
+  left: 50%;
+  top: -120px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #4c0c19;
+  transform: translateX(-50%) scale(0.0);
+  transition: transform 0.42s cubic-bezier(.2, .9, .2, 1), opacity .25s ease;
+  z-index: 100;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+}
+
+/* Quando il menu è visibile */
+.top-menu-icons.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.top-menu-icons.show .big-circle {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+/* Voci del menu (ancore) */
+.top-menu-icons a.menu-item {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: #4c0c19;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transition: transform 0.38s cubic-bezier(.2, .9, .2, 1), opacity .28s ease;
+  opacity: 0;
+  pointer-events: none;
+  color: white;
+  z-index: 1050;
+  left: 50%;
+  top: 32px;
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+/* ========== POSIZIONAMENTO CORRETTO — MENU RADIALE ========== */
+
+
+
+/* voci visibili all’apertura */
+.top-menu-icons.show a.menu-item {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- NUOVO SEMICERCHIO PERFETTO --- */
+
+:root {
+  --raise: 22px;
+}
+
+/* alto centrale */
+.top-menu-icons.show a.menu-item:nth-of-type(1) {
+  left: 50%;
+  top: calc(-8px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* alto-destra */
+.top-menu-icons.show a.menu-item:nth-of-type(2) {
+  left: calc(70% + 86px);
+  top: calc(18px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* destra bassa */
+.top-menu-icons.show a.menu-item:nth-of-type(3) {
+  left: calc(50% + 100px);
+  top: calc(78px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* alto-sinistra */
+.top-menu-icons.show a.menu-item:nth-of-type(4) {
+  left: calc(30% - 86px);
+  top: calc(18px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* sinistra bassa */
+.top-menu-icons.show a.menu-item:nth-of-type(5) {
+  left: calc(50% - 100px);
+  top: calc(78px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* arco inferiore centrale */
+.top-menu-icons.show a.menu-item:nth-of-type(6) {
+  left: 50%;
+  top: calc(116px + var(--raise));
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.top-menu-icons.show~.navegacao-btn,
+.navegacao-btn.open {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0) scale(0.65);
+}
+
+.navegacao-btn i {
+  color: #fff !important;
+}
+
+/* stati iniziali (chiuso) — piccole traslazioni per l’animazione di entrata */
+
+
+/* all’apertura: scala normale */
+
+
+/* hover sulle voci */
+
+
+
+/* Per rendere visibile il testo bianco, aggiungi questa riga al <body> se non hai già uno sfondo scuro */
+/* body { background-color: #333; } */
+
+.sup-direita {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  align-items: center;
+}
+
+/* Stile dell’immagine */
+.sup-direita img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Stile del contenitore di testo */
+.texto-ao-lado {
+  color: white;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Stile del paragrafo di testo */
+.texto-ao-lado p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.text-img-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.texto-bloco {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagem-texto-bloco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagem-texto-bloco img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.imagem-texto-bloco p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.avancar-pagina {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+.avancar-pagina a svg {
+  width: 35px;
+  height: 35px;
+  color: lightgreen;
+}
+
+/* Classe che ruota il contenuto principale */
+.rotated {
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center center;
+}
+
+/* Garantire che il main ruoti e abbia prospettiva */
+main.vini {
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////
+/* --- Stili del modulo --- */
+
+/* Regolato per centrare il contenuto del modulo (Step 1, 2 e 3) */
+#form-container-step1,
+#form-container-step2,
+#form-container-step3 {
+  width: 300px;
+  padding: 20px;
+}
+
+
+/* Stile dei titoli (label) */
+#form-container-step1 label,
+#form-container-step2 label,
+#form-container-step3 label {
+  display: block;
+  color: #432126;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* Stile del contenitore input/select per posizionare l’icona */
+.input-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* --- Stile dei campi Input/Select (TUTTI I TIPI) --- */
+/* REGOLA CONSOLIDATA */
+#form-container-step1 input[type="number"],
+#form-container-step1 input[type="date"],
+#form-container-step1 input[type="time"],
+#form-container-step1 select,
+#form-container-step2 input[type="text"],
+#form-container-step2 input[type="tel"],
+#form-container-step2 input[type="email"],
+#form-container-step3 input[type="text"],
+#booking-form input[type="date"],
+#booking-form input[type="time"],
+#booking-form select {
+  width: 100%;
+  padding: 15px 50px 15px 15px;
+  box-sizing: border-box;
+  border: 3px solid #432126;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #432126;
+  font-size: 1.1em;
+  font-weight: bold;
+  outline: none;
+  /* Rimozione dell’aspetto predefinito */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Rimuove pulsanti/frecce predefinite di input[type=date/time] e type=number (per usare icone personalizzate) */
+/* REGOLA CONSOLIDATA */
+#form-container-step1 input[type="date"]::-webkit-inner-spin-button,
+#form-container-step1 input[type="date"]::-webkit-calendar-picker-indicator,
+#form-container-step1 input[type="time"]::-webkit-inner-spin-button,
+#form-container-step1 input[type="time"]::-webkit-calendar-picker-indicator,
+#form-container-step1 input[type="number"]::-webkit-inner-spin-button,
+#form-container-step1 input[type="number"]::-webkit-outer-spin-button,
+#booking-form input[type="date"]::-webkit-inner-spin-button,
+#booking-form input[type="date"]::-webkit-calendar-picker-indicator,
+#booking-form input[type="time"]::-webkit-inner-spin-button,
+#booking-form input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+
+/* --- Stili delle icone (Unicode) --- */
+.icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #432126;
+  font-size: 1.5em;
+  pointer-events: none;
+  /* Non interferisce con il clic sul select/input */
+  z-index: 1;
+}
+
+/* Stile specifico per la freccia di "Numero di persone" */
+.icon.arrow {
+  font-size: 1.8em;
+  top: 55%;
+}
+
+/* --- STILI ESCLUSIVI DELLO STEP 3 --- */
+
+/* Regolazione margine per il titolo Metodo di pagamento */
+#form-container-step3 .payment-title {
+  color: #432126;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* Contenitore per le opzioni di pagamento (allineamento side-by-side) */
+.payment-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Nasconde visivamente il radio button predefinito */
+.payment-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Stile della card (label) */
+.payment-card {
+  display: block;
+  flex-grow: 1;
+  cursor: pointer;
+  text-align: center !important;
+  padding: 15px 10px;
+  border: 3px solid #432126;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #432126;
+  font-size: 1em;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Contenuto della card per miglior controllo del layout */
+.payment-card .card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icona di check (appare solo quando selezionato) */
+.payment-card .check-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  font-size: 1.2em;
+  color: #d8ead8;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Effetto di selezione (quando il radio è :checked) */
+.payment-options input[type="radio"]:checked+.card-content {
+  background-color: #432126;
+  color: #fff;
+  border: 3px solid #432126;
+  border-radius: 27px;
+  box-shadow: 0 0 0 3px #d8ead8;
+  /* Contorno esterno verde */
+}
+
+/* Fa apparire l’icona di check quando selezionato */
+.payment-options input[type="radio"]:checked+.card-content .check-icon {
+  transform: translateY(-50%) scale(1);
+  color: #d8ead8;
+}
+
+/* Regolazione fine per il campo 'Totale' (riutilizzando la classe input-wrapper) */
+#form-container-step3 .input-wrapper input[type="text"] {
+  padding: 15px 50px 15px 15px;
+}
+
+
+/* --- Stili dei pulsanti --- */
+
+/* Contenitore per allineare i due pulsanti side-by-side nello Step 2/3 */
+.buttons-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+/* Stile base per tutti i pulsanti principali e secondari */
+.main-button,
+.secondary-button,
+.buttons-group button,
+#btn_5,
+/* Pulsante Avanzare dello Step 1 */
+#btn_avanzare {
+  /* Padding e font-size ridotti per restare più compatti */
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 0 0;
+  outline: none;
+  transition: all 0.1s ease;
+  padding: 15px 15px !important;
+}
+
+.main-button {
+  margin-left: 65px !important;
+  margin-right: 0px !important;
+  width: 48%;
+  background-color: #c4a9b0;
+  /* Una tonalità più chiara dello sfondo marrone */
+  color: #432126;
+  box-shadow: 0 4px 0 0 #a0848a;
+  /* Ombra marrone/rosa scuro */
+  font-size: 1em;
+  text-align: center !important;
+  padding: 0px !important;
+}
+
+.secondary-button {
+  margin-left: 0px !important;
+}
+
+/* Pulsante principale (Avanzare/Prenotare) - Colore verde */
+
+#btn_5,
+#btn_avanzare {
+  width: 100%;
+  /* Larghezza totale per lo Step 1 */
+  background-color: #d8ead8;
+  /* Verde chiaro */
+  color: #432126;
+  /* Testo scuro */
+  box-shadow: 0 4px 0 0 #b3c8b3,
+    0 0 10px rgba(0, 0, 0, 0.2);
+  /* Dimensione del font ridotta per adattarsi al modulo */
+  font-size: 1.3em;
+  margin-left: 0px !important;
+}
+
+/* Regolazione di larghezza e font per i pulsanti dello Step 2/3 (affiancati) */
+.buttons-group .main-button {
+  width: 48%;
+  font-size: 1em;
+}
+
+
+/* Pulsante secondario (Indietro) - Colore marrone/rosa più chiaro */
+.secondary-button {
+  width: 48%;
+  background-color: #c4a9b0;
+  /* Una tonalità più chiara dello sfondo marrone */
+  color: #432126;
+  box-shadow: 0 4px 0 0 #a0848a;
+  /* Ombra marrone/rosa scuro */
+  font-size: 1em;
+  padding: 0px !important;
+}
+
+/* Effetto al clic (per tutti i pulsanti) */
+.main-button:active,
+.secondary-button:active,
+#btn_5:active,
+#btn_avanzare:active {
+  box-shadow: 0 1px 0 0;
+}
+
+.timeline{
+  padding-bottom: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.timeline-pin{
+  padding: 25px;
+  margin: 25px;
+  background-color: transparent;
+  border-radius: 15%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.timeline-pin:hover{
+  background-color: rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+}
+
+.itens{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-content{
+  width: 1500px;
+  height: 1450px;
+  text-align: center;
+  font-size: 45px;
+}
+
+.timeline-image{
+  padding-bottom: 55px;
+  height: 412px;
+  width: 214;
+}
+
+.timeline-text{
+  text-align: justify;
+}
+
+/* === ATTRAZIONI TURISTICHE - LAYOUT SLIDE 5 === */
+
+.attrazioni-page {
+  background-color: #936285;
+  min-height: 100vh;
+  color: #F5F0E8;
+}
+
+/* Titolo principale della pagina (uguale alla parte alta dello slide) */
+.attrazioni-page #h1_1 {
+  margin-top: 120px;
+  text-align: left;
+  padding: 0 60px;
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #dfff80;
+  text-transform: lowercase;
+}
+
+/* Blocco introduttivo con testo a sinistra e immagini a destra */
+.intro-attractions {
+  max-width: 1280px;
+  margin: 20px auto 50px;
+  padding: 20px 40px 40px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+}
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #F5F0E8;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #F5F0E8;
+  max-width: 650px;
+  margin-bottom: 0;
+}
+
+/* Galleria di immagini sul lato destro */
+.intro-gallery .gallery-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.intro-gallery .gallery-row img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Titolo "Principali itinerari turistici" */
+.main-title {
+  max-width: 1280px;
+  margin: 0 auto 20px;
+  padding: 0 40px;
+}
+
+.main-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #dfff80;
+}
+
+/* Wrapper generale delle card di itinerario */
+.itineraries-wrapper {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+  padding: 0 40px 40px;
+}
+
+/* Ogni riga con 2 card affiancate (come nello slide) */
+.itineraries-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Card base di itinerario */
+.itinerary {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 22px;
+  padding: 22px 24px;
+}
+
+/* Card a larghezza piena (gastronomia + accesso) */
+.itinerary.full-width {
+  margin-top: 20px;
+}
+
+/* Titolo delle card */
+.itinerary h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #F5F0E8;
+  margin-bottom: 10px;
+}
+
+/* Liste all’interno delle card */
+.itinerary ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.itinerary ul li {
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #F5F0E8;
+  margin-bottom: 6px;
+}
+
+/* Piccole variazioni di sfondo tra alcune card (effetto Canva) */
+.bernina-section,
+.strada-vini {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.gastronomia {
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.accesso {
+  background: rgba(0, 0, 0, 0.20);
+}
+
+/* Regolazione responsive di base per schermi più piccoli */
+@media (max-width: 900px) {
+  .intro-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .attrazioni-page #h1_1 {
+    padding: 0 24px;
+    font-size: 40px;
+  }
+
+  .itineraries-row {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-attractions,
+  .main-title,
+  .itineraries-wrapper {
+    padding: 0 20px 30px;
+  }
+}
+ .itineraries-wrapper {
+    background-image: url("imagens/stradadelvini.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 80px 40px;
+    border-radius: 25px;
+}
+ 
+/* === ATTRAZIONI TURISTICHE - LAYOUT STILE IMMAGINI === */
+
+.attrazioni-page {
+  background-color: #936285;
+  min-height: 100vh;
+  color: #F5F0E8;
+}
+
+/* Titolo principale */
+.attrazioni-page #h1_1 {
+  margin-top: 100px;
+  text-align: left;
+  padding: 0 60px;
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #dfff80;
+  text-transform: lowercase;
+}
+
+/* Blocco introduttivo */
+.intro-attractions {
+  max-width: 1400px;
+  margin: 30px auto 60px;
+  padding: 35px 45px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+}
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #F5F0E8;
+  margin-bottom: 18px;
+}
+
+.intro-text p {
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #F5F0E8;
+}
+
+/* Galleria fotografica nell’introduzione */
+.intro-gallery .gallery-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.intro-gallery .gallery-row:last-child {
+  margin-bottom: 0;
+}
+
+.intro-gallery .gallery-row img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Titolo "Principali itinerari" */
+.main-title {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  padding: 0 45px;
+}
+
+.main-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #dfff80;
+  text-transform: lowercase;
+}
+
+/* Container degli itinerari con sfondo di vigneto */
+.itineraries-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 45px 80px;
+  background-image: url("imagens/stradadelvini.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  position: relative;
+}
+
+.itineraries-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(147, 98, 133, 0.7);
+  border-radius: 25px;
+  z-index: 0;
+}
+
+/* Blocchi di itinerario */
+.itinerary-block {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 35px;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.itinerary-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Testo degli itinerari */
+.itinerary-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.itinerary-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itinerary-text ul li {
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #eaeaea;
+  margin-bottom: 8px;
+}
+
+/* Immagini degli itinerari */
+.itinerary-img {
+  width: 100%;
+}
+
+.itinerary-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Layout invertito (immagine a destra) */
+.itinerary-block.right-img {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.itinerary-block.right-img .itinerary-img {
+  order: 2;
+}
+
+.itinerary-block.right-img .itinerary-text {
+  order: 1;
+}
+
+.prenotazione-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 80px;
+}
+
+.prenotazione-img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.prenotazione-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #dfff80;
+    margin-bottom: 20px;
+}
+
+.prenotazione-text p,
+.prenotazione-text li {
+    color: #F5F0E8;
+    font-size: 16px;
+    line-height: 1.6;
 }

@@ -19,35 +19,47 @@
   <!-- HEADER -->
   <header>
     <div class="language-selector">
-      <button class="lang-btn" id="btn_1">
-        <span id="flag"></span>
-        <span id="langName">It</span>
-        <i class="ph-fill ph-triangle" id="lang-arrow"></i>
-      </button>
-
-      <div class="lang-dropdown">
-        <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
-        <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
-        <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
-      </div>
+    <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
+      <span id="flag"></span>
+      <span id="langName">It</span>
+      <i class="ph-fill ph-triangle" id="lang-arrow"></i>
+    </button>
+    <div class="lang-dropdown" id="langMenu">
+      <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
+      <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
+      <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
     </div>
-
-    <div class="header-icons">
-      <button class="navegacao-btn">
-        <i class="ph-fill ph-hourglass-low"></i>
-      </button>
-
-      <div class="top-menu-icons">
-        <a href="Storia.html"><i class="ph-fill ph-hourglass-low"></i></a>
-        <a href="AttrazioniTuristiche.html"><i class="ph-fill ph-map-pin"></i></a>
-        <a href="index.html"><i class="ph-fill ph-house"></i></a>
-        <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a> <!-- To achando esse imagem mt estranha se nao conseguirem padronizar usem essa <i class="ph-fill ph-wine"></i> -->
-        <a href="Cardapio.html"><i class="ph-fill ph-fork-knife"></i></a>
-        <a href="chatbot.html"><i class="ph-fill ph-robot"></i></a>
-      </div>
+  </div>
+  <div class="header-icons">
+    <button class="navegacao-btn">
+      <i class="ph-fill ph-hourglass-low"></i>
+    </button>
+    <div class="top-menu-icons">
+      <div class="big-circle"></div>
+      <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+      <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin"></i></a>
+      <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+      <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+      <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+      <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
     </div>
-    <p><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo"><span id="logoText">Tre Fratelli</span></p>
+  </div>
+  <div class="sup-direita">
+    <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+    <div class="texto-ao-lado">
+      <p>Tre Fratelli</p>
+    </div>
+  </div>
   </header>
+  <div class="avancar-pagina">
+    <a href="attrazionituristiche.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
 
   <!-- ========================= SECTION: STORIA ========================= -->
   <section id="storia" class="storia-section">
@@ -56,33 +68,233 @@
     <h1 id="h1_1" class="storia-title">La nostra storia e il tuo piacere.</h1>
 
     <!-- ========================= LINHA DO TEMPO (APENAS OS 4 PINS) ========================= -->
-    <div class="timeline">
+<div class="timeline">
+    
+    <svg class="timeline-path" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path
+            d="M 10 30 C 20 10, 20 80, 30 75 S 40 100, 60 15 C 70 -5, 80 80, 90 60"
+            stroke="#5d3a24"
+            fill="none"
+            stroke-width="0.7"
+            stroke-dasharray="1.5, 1.5"
+            stroke-linecap="round"
+        />
+    </svg>
 
-      <!-- PIN 1 -->
-      <button class="timeline-pin" data-target="item1">
+    <button class="timeline-pin" data-target="item1">
         <img src="imagens/pin.png" alt="Pin">
         <h3 id="h3_1">I. Le Origini e la prima crisi</h3>
-      </button>
-
-      <!-- PIN 2 -->
-      <button class="timeline-pin" data-target="item2">
+    </button>
+    <button class="timeline-pin" data-target="item2">
         <img src="imagens/pin.png" alt="Pin">
         <h3 id="h3_2">II. Il ritorno alla crescita e la seconda crisi</h3>
-      </button>
-
-      <!-- PIN 3 -->
-      <button class="timeline-pin" data-target="item3">
+    </button>
+    <button class="timeline-pin" data-target="item3">
         <img src="imagens/pin.png" alt="Pin">
         <h3 id="h3_3">III. Ritorno dovuto al turismo e alla migrazione giovanile</h3>
-      </button>
-
-      <!-- PIN 4 -->
-      <button class="timeline-pin" data-target="item4">
+    </button>
+    <button class="timeline-pin" data-target="item4">
         <img src="imagens/pin.png" alt="Pin">
         <h3 id="h3_4">IV. Tra Tradizione e ispirazione creativa</h3>
-      </button>
+    </button>
 
+    <div id="content-container">
+        <div id="item1" class="timeline-content">
+            <img class="timeline-image" src="imagens/storia.jpg" alt="Origini foto">
+            <p id="p_1" class="timeline-text">
+                La Cantina e Ristorante Tre Fratelli aprì ufficialmente nel 1925, ma la vita non fu mai facile. Nel 1930, rischiò di chiudere a causa della crisi economica e dei debiti che aumentarono.
+            </p>
+        </div>
+        <div id="item2" class="timeline-content">
+            <img class="timeline-image" src="imagens/storia4.jpg" alt="Crescita foto">
+            <p id="p_2" class="timeline-text">
+                Per salvare il posto, la madre dei fratelli, Teresa, aprì una piccola cucina rustica per servire i viaggiatori della ferrovia di Tirano, combinando vino e cibo locale. Grazie a questo, riuscirono a mantenere la proprietà. Quando finalmente iniziarono a realizzare un piccolo profitto, scoppiò la Seconda Guerra Mondiale, che fu un duro colpo, sia per l' azienda che per la famiglia.
+            </p>
+        </div>
+        <div id="item3" class="timeline-content">
+            <img class="timeline-image" src="imagens/storia2.jpg" alt="Turismo foto">
+            <p id="p_3" class="timeline-text">
+                Negli anni '60 e '70, con il boom turistico nelle Alpi, vissero una nuova fase, raccogliendo i frutti della pazienza e della perseverança. Fu un periodo molto positivo. — Ma durante a crise degli anni '80, il ristorante rischiò di chiudere di nuovo a causa della concorrenza e dell'emigrazione dei giovani.
+            </p>
+        </div>
+        <div id="item4" class="timeline-content">
+            <img class="timeline-image" src="imagens/storia3.jpg" alt="Tradizione foto">
+            <p id="p_4" class="timeline-text">
+                Fu allora che uno dei pronipoti, Alessandro, laureato in enologia a Milano, portò nuove idee, unindo tradizione e innovazione. Quest'anno compie 100 anni ed è stata acquistata dalla famiglia Zanarelli, che promette di ristrutturare il ristorante.
+            </p>
+        </div>
     </div>
+</div>
+
+    <style>
+
+:root {
+    /* VARIÁVEL DE ESCALA: Defina a largura máxima do seu layout aqui. */
+    /* Mudar este valor irá escalar todo o posicionamento e o tamanho da fonte */
+    --timeline-max-width: 1300px;
+    
+    /* VARIÁVEIS DE COR */
+    --pin-color: #c95143; /* Cor do pin (vermelho/laranja) */
+    --text-color: black; /* Cor do texto (marrom) */
+    --path-color: #5d3a24; /* Cor do caminho tracejado */
+    --pin-max-size: 90px; /* Variável para o tamanho máximo da imagem do pin */
+}
+
+/* ========================================= */
+/* 1. CONTAINER PRINCIPAL (.timeline) */
+/* ========================================= */
+.timeline {
+    /* 1. Contêiner principal para posicionamento */
+    position: relative;
+    
+    /* 2. Define o tamanho máximo e centraliza */
+    max-width: var(--timeline-max-width);
+    /* A altura é crucial para a curva. Ajuste 'height' para esticar ou comprimir o layout. */
+    /* Mantendo a proporção 60% da largura: */
+    height: calc(var(--timeline-max-width) * 0.6); 
+    
+    margin: 5vh auto; /* Centraliza horizontalmente e adiciona margem vertical */
+    
+    /* Estilo de fundo opcional para replicar o 'papel antigo' */
+    background-image: url('caminho/para/sua/imagem_de_fundo.jpg'); /* Altere o caminho */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========================================= */
+/* 2. MARCADORES (PINS) */
+/* ========================================= */
+.timeline-pin {
+    /* 3. Posicionamento Absoluto para o layout curvo */
+    position: absolute;
+    
+    /* Estilos base do botão/marcador */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 15%; /* Largura relativa do elemento completo */
+    padding: 0;
+    z-index: 10; /* Garante que os pins fiquem acima do caminho SVG */
+}
+
+/* 4. Posicionamento Específico de Cada Pin (usando PORCENTAGENS) */
+.timeline-pin[data-target="item1"] {
+    /* Pin I: Canto superior esquerdo */
+    top: 30%; 
+    left: 8%;
+    transform: translateX(-50%); 
+}
+
+.timeline-pin[data-target="item2"] {
+    /* Pin II: Centro inferior */
+    top: 75%; 
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.timeline-pin[data-target="item3"] {
+    /* Pin III: Centro superior direito (pico da curva) */
+    top: 15%; 
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+.timeline-pin[data-target="item4"] {
+    /* Pin IV: Canto inferior direito */
+    top: 60%; 
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+/* ========================================= */
+/* 3. ESTILOS INTERNOS DOS PINS */
+/* ========================================= */
+
+/* 5. Estilizando a Imagem do Pin */
+.timeline-pin img {
+    width: 100%; /* A imagem preenche a largura do contêiner .timeline-pin */
+    max-width: var(--pin-max-size); /* Usando a variável */
+    height: auto;
+    display: block;
+    margin: 0 auto 5px; /* Centraliza a imagem e adiciona espaço abaixo */
+}
+
+/* 6. Estilizando o Texto */
+.timeline-pin h3 {
+    font-size: 1.2vw; /* Tamanho da fonte RELATIVO à largura da viewport (VW) */
+    line-height: 1.2;
+    color: var(--text-color);
+    font-family: serif; 
+    font-weight: normal;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); 
+}
+
+/* ========================================= */
+/* 4. ESTILO DO CAMINHO SVG (Novo e Corrigido) */
+/* ========================================= */
+
+/* 7. Estilo do Contêiner SVG */
+.timeline svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Coloca o caminho atrás dos pins */
+    pointer-events: none; /* Garante que o SVG não bloqueie o clique nos pins */
+}
+
+/* 8. Estilo do PATH (A Linha Desenhada) */
+.timeline svg path {
+    stroke: var(--path-color); /* Cor do traço */
+    fill: none; /* O caminho não deve ser preenchido */
+    stroke-width: 0.7; /* Espessura do traço (ajuste o valor se for muito fino/grosso) */
+    stroke-dasharray: 1.5, 1.5; /* Cria o efeito tracejado (1.5 de traço, 1.5 de espaço) */
+    stroke-linecap: round; /* Deixa as pontas dos traços arredondadas */
+}
+
+.timeline-content {
+    display: none;
+    
+    /* Configuração para o container de descrição */
+    position: absolute; 
+    
+    /* Z-index alto para garantir que ele apareça sobre a timeline */
+    z-index: 100;
+    
+    /* Estilos visuais do pop-up */
+    background-color: #f7f3e8; /* Cor de fundo clara para contraste */
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* Define a largura máxima do pop-up para que não ocupe a tela toda */
+    width: 300px;
+    max-width: 90vw; /* Responsividade em telas pequenas */
+}
+
+/* Estilo para quando a descrição estiver ATIVA */
+.timeline-content.active {
+    display: block;
+}
+
+.timeline-content .timeline-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.timeline-content .timeline-text {
+    color: var(--text-color);
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+    </style>
 
     <!-- ========================= CONTEÚDOS ========================= -->
 
@@ -137,12 +349,14 @@
     </div>
 
     <!-- RODAPÉ -->
-    <footer class="storia-footer">
-      <h2 id="h2_1" class="storia-foot-title">storia</h2>
-    </footer>
+
 
   </section>
-
+<footer class="site-footer" style="margin-top: 500px;">
+    <div class="footer-bottom">
+        &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+</footer>
 </body>
 
 <script>
@@ -223,6 +437,86 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('lang') || 'it';
   setLanguage(savedLang);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const pins = document.querySelectorAll('.timeline-pin');
+    // Mantenha esta variável sincronizada com o CSS
+    const DESCRIPTION_WIDTH = 300; 
+    
+    // NOTA: As variáveis 'activeContent' e 'activePin' foram removidas, 
+    // pois a nova lógica permite múltiplos conteúdos ativos simultaneamente.
+
+    pins.forEach(pin => {
+        pin.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetContent = document.getElementById(targetId);
+
+            // =========================================================
+            //  PARÂMETROS DE AJUSTE DE POSIÇÃO (CUSTOMIZAÇÃO)
+            //  Seus valores de teste: X_OFFSET = -100, Y_SPACING = -110
+            // =========================================================
+            // Use estes para ajustar a posição horizontal e vertical
+            const X_OFFSET = -100; 
+            const Y_SPACING = -110;
+            // =========================================================
+            
+            // 1. Lógica de Alternância (MOSTRAR / ESCONDER)
+            // Se o conteúdo de destino já estiver visível (tem a classe 'active'), esconda-o e pare.
+            // Esta é a nova lógica de "fechar ao clicar na mesma seta".
+            if (targetContent.classList.contains('active')) {
+                targetContent.classList.remove('active');
+                return;
+            }
+
+            // O PASSO 2 (Esconder o conteúdo anterior) foi INTENCIONALMENTE REMOVIDO 
+            // para permitir que outras descrições permaneçam abertas.
+
+            // 2. Posiciona o conteúdo
+            const pinRect = this.getBoundingClientRect();
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            // Cálculo para CENTRALIZAÇÃO horizontal: (Centro do Pin) - (Metade da Largura da Descrição) + (Ajuste)
+            const pinCenterHorizontal = pinRect.left + (pinRect.width / 2);
+            let contentLeft = pinCenterHorizontal - (DESCRIPTION_WIDTH / 2) + X_OFFSET;
+            
+            // Tratamento de Borda (Responsividade: evita que o pop-up saia da tela)
+            if (contentLeft < 5) {
+                contentLeft = 5; 
+            }
+            if (contentLeft + DESCRIPTION_WIDTH > window.innerWidth - 5) {
+                contentLeft = window.innerWidth - DESCRIPTION_WIDTH - 5; 
+            }
+
+            // Posição Vertical (Y): Usa o Y_SPACING
+            const contentTop = pinRect.bottom + scrollY + Y_SPACING;
+            
+            // Aplica as posições
+            targetContent.style.top = `${contentTop}px`;
+            targetContent.style.left = `${contentLeft}px`;
+
+            // 3. Mostra o NOVO conteúdo
+            targetContent.classList.add('active');
+            
+            // NOTA: As linhas de atualização de estado ativo (activeContent = targetContent; activePin = this;) 
+            // foram removidas, pois não precisamos rastrear um único estado ativo.
+        });
+    });
+    
+    // Opcional: Esconder todas as descrições ao clicar fora
+    // Esta função foi modificada para buscar todos os conteúdos ativos e fechá-los.
+    document.addEventListener('click', function(e) {
+        // Seleciona todos os conteúdos que estão abertos no momento
+        const activeContents = document.querySelectorAll('.timeline-content.active');
+        
+        // Verifica se o clique não foi em um pin e nem em um conteúdo ativo
+        if (!e.target.closest('.timeline-pin') && !e.target.closest('.timeline-content')) {
+            activeContents.forEach(content => {
+                content.classList.remove('active');
+            });
+        }
+    });
 });
 </script>
 </html>

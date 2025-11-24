@@ -16,18 +16,56 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Dropdown do menu de navegação
+/* --- Dropdown do menu de navegação (menu radial) --- */
 const navBtn = document.querySelector('.navegacao-btn');
 const menuNav = document.querySelector('.top-menu-icons');
 
-navBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuNav.classList.toggle('show');
-});
 
-document.addEventListener('click', (e) => {
+
+
+/* proteção: se elementos não existirem, não da erro */
+if (navBtn && menuNav) {
+  navBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const willOpen = !menuNav.classList.contains('show');
+
+    // alterna a classe no container do menu
+    menuNav.classList.toggle('show');
+
+    // anima o botão principal visualmente
+    navBtn.classList.toggle('open', willOpen);
+  });
+
+  // fecha ao clicar fora (mantendo pequena latência para evitar 'piscar')
+  document.addEventListener('click', (e) => {
     if (!menuNav.contains(e.target) && !navBtn.contains(e.target)) {
-        menuNav.classList.remove('show');
+      // remove classes imediatamente para responsividade, mas com pequena defasagem visual
+      menuNav.classList.remove('show');
+      navBtn.classList.remove('open');
     }
-});
+  });
+
+  // fecha ao pressionar ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuNav.classList.contains('show')) {
+      menuNav.classList.remove('show');
+      navBtn.classList.remove('open');
+      navBtn.focus();
+    }
+  });
+
+ 
+
+  // melhora a navegação por teclado: ao focar itens, garante que o menu esteja aberto
+  const menuItems = Array.from(menuNav.querySelectorAll('a.menu-item'));
+  menuItems.forEach(item => {
+    item.addEventListener('focus', () => {
+      if (!menuNav.classList.contains('show')) {
+        menuNav.classList.add('show');
+        navBtn.classList.add('open');
+      }
+    });
+  });
+}
+
 

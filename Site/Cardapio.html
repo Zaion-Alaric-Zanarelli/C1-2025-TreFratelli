@@ -16,37 +16,49 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-        <div class="language-selector">
-            <button class="lang-btn" id="btn_1">
-              <span id="flag"></span>
-              <span id="langName">It</span>
-              <i class="ph-fill ph-triangle" id="lang-arrow"></i>
-            </button>
-
-            <div class="lang-dropdown">
-                <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
-                <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
-                <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
-            </div>
-        </div>
-
-        <div class="header-icons">
-            <button class="navegacao-btn">
-                <i class="ph-fill ph-fork-knife"></i>
-            </button>
-
-            <div class="top-menu-icons">
-                <a href="Storia.html"><i class="ph-fill ph-hourglass-low"></i></a>
-                <a href="AttrazioniTuristiche.html"><i class="ph-fill ph-map-pin"></i></a>
-                <a href="index.html"><i class="ph-fill ph-house"></i></a>
-                <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a>
-                <a href="Cardapio.html"><i class="ph-fill ph-fork-knife"></i></a>
-                <a href="chatbot.html"><i class="ph-fill ph-robot"></i></a>
-            </div>
-        </div>
-        <p><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo" id="img_1">Tre Fratelli</p>
-    </header>
+ <header>
+    <div class="language-selector">
+    <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
+      <span id="flag"></span>
+      <span id="langName">It</span>
+      <i class="ph-fill ph-triangle" id="lang-arrow"></i>
+    </button>
+    <div class="lang-dropdown" id="langMenu">
+      <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
+      <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
+      <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
+    </div>
+  </div>
+  <div class="header-icons">
+    <button class="navegacao-btn">
+      <i class="ph-fill ph-fork-knife"></i>
+    </button>
+    <div class="top-menu-icons">
+      <div class="big-circle"></div>
+      <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+      <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin"></i></a>
+      <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+      <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+      <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+      <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
+    </div>
+  </div>
+  <div class="sup-direita">
+    <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+    <div class="texto-ao-lado">
+      <p>Tre Fratelli</p>
+    </div>
+  </div>
+  </header>
+  <div class="avancar-pagina">
+    <a href="index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
 
     <!-- ========================= PÁGINA: CARDÁPIO ========================= -->
     <main class="menu-page">
@@ -299,14 +311,10 @@
                     <img src="imagens/café.jpg" alt="Caffè Cappuccino con biscotto" id="img_6">
                 </div>
             </div>
-            <a class="next-section" href="#antipaste" id="btn_next_5"></a>
         </section>
 
         <!-- Fim do resto da página -->
-        <div>
-            <img src="imagens/Logo de Icone.jpeg" alt="Logo Tre Fratelli" id="img_7">
-            <p id="p_35">Tre Fratelli</p>
-        </div>
+
 
 
                 <!-- INFORMAZIONI ORARIO E SCONTO -->
@@ -342,90 +350,148 @@
 
         <!-- FAÇA SUA RESERVA -->
         <section id="prenotazione">
-            <h1 id="h1_8">FAI LA TUA<br>PRENOTAZIONE</h1>
+        
+<img src="imagens/stradadelvini.png"
+     alt="img_2"
+     style="width: 35%; height: auto; object-fit: contain; border-radius: 12px;" >
 
-            <div id="step1">
-                <div>
-                    <img id="img_2" src="imagens/stradadelvini.png" alt="Vineyard landscape">
-                    <div>
-                        <label id="h3_7">Numero di persone</label>
-                        <input type="number" id="numPeople" placeholder="Es. 2" min="1">
 
-                        <label id="h3_8">Data</label>
-                        <input type="date" id="date">
+        <h1 id="h1_8">FAI LA TUA<br>PRENOTAZIONE</h1>
 
-                        <label id="h3_9">Orario</label>
-                        <input type="time" id="time">
 
-                        <label id="h3_10">Agenzia</label>
-                        <select id="agency">
-                            <option id="p_7" value="">Seleziona agenzia</option>
-                            <option value="agency1" id="p_8">Agenzia 1</option>
-                            <option value="agency2" id="p_9">Agenzia 2</option>
-                            <option value="agency3" id="p_10">Agenzia 3</option>
-                        </select>
-
-                        <button id="btn_5" onclick="goToStep(2)">Avanzare</button>
-                    </div>
+    <div id="step1">
+        <div>
+            
+            <div id="form-container-step1">
+                
+                <label id="h3_7" for="numPeople">Numero di persone</label>
+                <div class="input-wrapper select-like"> 
+                    <input type="number" id="numPeople" placeholder="Es. 2" min="1" value="1">
+                    <span class="icon arrow">&#x2304;</span> 
                 </div>
+
+                <label id="h3_8" for="date">Data</label>
+                <div class="input-wrapper">
+                    <input type="date" id="date">
+                    <span class="icon calendar">&#x1F4C5;</span>
+                </div>
+
+                <label id="h3_9" for="time">Orario</label>
+                <div class="input-wrapper">
+                    <input type="time" id="time">
+                    <span class="icon clock">&#x23F1;</span>
+                </div>
+
+                <label id="h3_10" for="agency">Agenzia</label>
+                <div class="input-wrapper">
+                    <select id="agency">
+                        <option id="p_7" value="" disabled selected>Seleziona agenzia</option>
+                        <option value="agency1" id="p_8">Agenzia 1</option>
+                        <option value="agency2" id="p_9">Agenzia 2</option>
+                        <option value="agency3" id="p_10">Agenzia 3</option>
+                    </select>
+                    <span class="icon building">&#x1F3E2;</span> 
+                </div>
+
+                <button id="btn_5" class="main-button" onclick="goToStep(2)">Avanzare</button>
+            </div>
+        </div>
+    </div>
+
+           <div id="step2">
+    <div>
+       <img src="imagens/stradadelvini.png"
+     alt="img_3"
+     style="width: 35%; height: auto; object-fit: contain; border-radius: 12px;">
+        
+        <div id="form-container-step2">
+            
+            <h2 id="h2_2">FAI LA TUA<br>PRENOTAZIONE</h2>
+
+            <label id="h3_11" for="fullName">Nome completo</label>
+            <div class="input-wrapper">
+                <input type="text" id="fullName" placeholder="Es. Giovanni Rossi">
+                <span class="icon person">&#x1F464;</span> 
             </div>
 
-            <div id="step2">
-                <div>
-                    <img id="img_3" src="imagens/stradadelvini.png" alt="Vineyard landscape">
-                    <div>
-                        <h2 id="h2_2">FAI LA TUA<br>PRENOTAZIONE</h2>
-
-                        <label id="h3_11">Nome completo</label>
-                        <input type="text" id="fullName" placeholder="Es. Giovanni Rossi">
-
-                        <label id="h3_12">CPF</label>
-                        <input type="text" id="cpf" placeholder="Es. 123.456.789-00">
-
-                        <label id="h3_13">Telefono</label>
-                        <input type="tel" id="phone" placeholder="Es. +39 123 456 7890">
-
-                        <label id="h3_14">Email</label>
-                        <input type="email" id="email" placeholder="Es. giovanni@example.com">
-
-                        <button id="btn_6" onclick="goToStep(1)">Indietro</button>
-                        <button id="btn_7" onclick="goToStep(3)">Prenotare</button>
-                    </div>
-                </div>
+            <label id="h3_12" for="cpf">CPF</label>
+            <div class="input-wrapper">
+                <input type="text" id="cpf" placeholder="Es. 123.456.789-00">
+                <span class="icon id-card">&#x1F4B3;</span> 
             </div>
 
-            <div id="step3">
-                <div>
-                    <img id="img_4" src="imagens/stradadelvini.png" alt="Vineyard landscape">
-                    <div>
-                        <h2 id="h2_3">FAI LA TUA<br>PRENOTAZIONE</h2>
-
-                        <label id="h3_15">Totale</label>
-                        <input type="text" id="total" placeholder="€ 0.00">
-
-                        <p id="p_11">Metodo di pagamento</p>
-
-                        <div>
-                            <label id="h3_16">
-                                <input type="radio" name="payment" value="anticipato" checked>
-                                Anticipato
-                            </label>
-                            <label id="h3_17">
-                                <input type="radio" name="payment" value="sul_posto">
-                                Sul posto
-                            </label>
-                        </div>
-
-                        <button id="btn_8" onclick="goToStep(2)">Indietro</button>
-                        <button id="btn_9" onclick="submitBooking()">Confermare</button>
-                    </div>
-                </div>
+            <label id="h3_13" for="phone">Telefono</label>
+            <div class="input-wrapper">
+                <input type="tel" id="phone" placeholder="Es. +39 123 456 7890">
+                <span class="icon phone-icon">&#x1F4DE;</span> 
             </div>
+
+            <label id="h3_14" for="email">Email</label>
+            <div class="input-wrapper">
+                <input type="email" id="email" placeholder="Es. giovanni@example.com">
+                <span class="icon envelope">&#x2709;</span> 
+            </div>
+
+            <div class="buttons-group">
+                <button id="btn_7" class="main-button" onclick="goToStep(3)">Prenotare</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+                        <div id="step3">
+    <div>
+        <img src="imagens/stradadelvini.png"
+     alt="img_4"
+     style="width: 35%; height: auto; object-fit: contain; border-radius: 12px;">
+        
+        <div id="form-container-step3">
+            
+            <h2 id="h2_3">FAI LA TUA<br>PRENOTAZIONE</h2>
+
+            <label id="h3_15" for="total">Totale</label>
+            <div class="input-wrapper">
+                <input type="text" id="total" placeholder="€ 0.00" >
+                <span class="icon currency">&#x1F4B0;</span> 
+            </div>
+
+            <p id="p_11" class="payment-title" style="color: white;">Metodo di pagamento</p>
+
+            <div class="payment-options">
+                
+                <label id="h3_16" class="payment-card">
+                    <input type="radio" name="payment" value="anticipato" checked>
+                    <span class="card-content">
+                        Anticipato
+                        <span class="check-icon">&#x2713;</span>
+                    </span>
+                </label>
+                
+                <label id="h3_17" class="payment-card">
+                    <input type="radio" name="payment" value="sul_posto">
+                    <span class="card-content">
+                        Sul posto
+                        <span class="check-icon">&#x2713;</span>
+                    </span>
+                </label>
+                
+            </div>
+
+
+            
+        </div>
+    </div>
+</div>
         </section>
 
 
     </main>
-
+<footer class="site-footer">
+    <div class="footer-bottom">
+        &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+</footer>
 <script>
 const i18n = {
     it: {
@@ -438,7 +504,7 @@ const i18n = {
         btn_4: "<span class='fi fi-br'></span> Pt-Br",
 
         /* SEÇÃO ANTIPASTI & FORMAGGI */
-        h1_1: "il nostro<br>menu degli antipasti",
+        h1_1: "Il nostro<br>   Menu degli antipasti",
         h2_1: "Antipasti & Formaggi",
         h3_1: "Piatti",
         h3_2: "Armonizzazione suggerita",

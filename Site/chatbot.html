@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,60 @@
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
-<body>
+
+<body class="chatbot">
 
   <!-- HEADER -->
   <header>
     <div class="language-selector">
-      <button class="lang-btn" id="btn_1">
+      <button class="lang-btn" id="btn_1" onclick="toggleDropdown()">
         <span id="flag"></span>
         <span id="langName">It</span>
         <i class="ph-fill ph-triangle" id="lang-arrow"></i>
       </button>
-
-      <div class="lang-dropdown">
+      <div class="lang-dropdown" id="langMenu">
         <button onclick="setLanguage('it')" id="btn_2"><span class="fi fi-it"></span> It</button>
         <button onclick="setLanguage('en_uk')" id="btn_3"><span class="fi fi-gb"></span> En-Uk</button>
         <button onclick="setLanguage('pt_br')" id="btn_4"><span class="fi fi-br"></span> Pt-Br</button>
       </div>
     </div>
-
     <div class="header-icons">
-      <button class="navegacao-btn" id="btn_5">
+      <button class="navegacao-btn">
         <i class="ph-fill ph-robot"></i>
       </button>
-
       <div class="top-menu-icons">
-        <a href="Storia.html" id="link_1"><i class="ph-fill ph-hourglass-low"></i></a>
-        <a href="AttrazioniTuristiche.html" id="link_2"><i class="ph-fill ph-map-pin"></i></a>
-        <a href="index.html" id="link_3"><i class="ph-fill ph-house"></i></a>
-        <a href="vini.html"><img src="imagens/iconeVinho.png" alt="Vini"></a> <!-- To achando esse imagem mt estranha se nao conseguirem padronizar usem essa <i class="ph-fill ph-wine"></i> -->
-        <a href="Cardapio.html" id="link_5"><i class="ph-fill ph-fork-knife"></i></a>
-        <a href="chatbot.html" id="link_6"><i class="ph-fill ph-robot"></i></a>
+        <div class="big-circle"></div>
+        <a href="Storia.html" class="menu-item"><i class="ph-fill ph-hourglass-low"></i></a>
+        <a href="AttrazioniTuristiche.html" class="menu-item"><i class="ph-fill ph-map-pin"></i></a>
+        <a href="index.html" class="menu-item"><i class="ph-fill ph-house"></i></a>
+        <a href="vini.html" class="menu-item"><i class="ph-fill ph-wine"></i></a>
+        <a href="Cardapio.html" class="menu-item"><i class="ph-fill ph-fork-knife"></i></a>
+        <a href="chatbot.html" class="menu-item"><i class="ph-fill ph-robot"></i></a>
+      </div>
+    </div>
+    <div class="sup-direita">
+      <img src="imagens/Logo Completa.png" alt="Tre Fratelli" class="logo" />
+      <div class="texto-ao-lado">
+        <p>Tre Fratelli</p>
       </div>
     </div>
 
-    <p id="p_1"><img src="imagens/Logo Completa.jpeg" alt="Tre Fratelli" class="logo">Tre Fratelli</p>
   </header>
+  <div class="avancar-pagina">
+    <a href="storia.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="currentColor"
+        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+    </a>
+  </div>
 
   <!-- ========================== CHATBOT ========================== -->
   <main class="chatbot-main">
@@ -62,85 +79,94 @@
 
       <div class="chatbot-input-wrapper">
         <input type="text" class="chatbot-input" id="input_1"
-               placeholder="Raccontami il tuo umore o il piatto che hai scelto">
+          placeholder="Raccontami il tuo umore o il piatto che hai scelto">
+        <button class="mic-btn" id="btn_7">
+          <i class="ph-fill ph-microphone"></i>
+        </button>
+        <button class="send-btn" id="btn_8"></button>
+
       </div>
-
-      <button class="mic-btn" id="btn_7"></button>
-      <button class="send-btn" id="btn_8"></button>
     </div>
-
   </main>
-
+  <!-- Imagens decorativas -->
+  <img src="imagens/Nerodavola.jpg" alt="" class="chatbot-grapes-left">
+  <img src="imagens/Valpolicellaripasso.jpg" alt="" class="chatbot-grapes-right">
+  <footer class="site-footer" style="margin-top: 20px !important;">
+    <div class="footer-bottom">
+      &copy; 2025 Tre Fratelli. Todos os direitos reservados.
+    </div>
+  </footer>
 </body>
 <script>
-const i18n = {
-  it: {
-    titulo: "Chatbot - Tre Fratelli",
-    flag: "<span class='fi fi-it'></span>",
-    langName: "It",
-    btn_2: "<span class='fi fi-it'></span> It",
-    btn_3: "<span class='fi fi-gb'></span> En-Uk",
-    btn_4: "<span class='fi fi-br'></span> Pt-Br",
+  const i18n = {
+    it: {
+      titulo: "Chatbot - Tre Fratelli",
+      flag: "<span class='fi fi-it'></span>",
+      langName: "It",
+      btn_2: "<span class='fi fi-it'></span> It",
+      btn_3: "<span class='fi fi-gb'></span> En-Uk",
+      btn_4: "<span class='fi fi-br'></span> Pt-Br",
 
-    h1_1: "Cantina e Ristorante",
-    h2_1: "Tre Fratelli",
-    p_1: "Tre Fratelli",
-    input_1: "Raccontami il tuo umore o il piatto che hai scelto"
-  },
+      h1_1: "Cantina e Ristorante",
+      h2_1: "Tre Fratelli",
+      p_1: "Tre Fratelli",
+      input_1: "Raccontami il tuo umore o il piatto che hai scelto"
+    },
 
-  en_uk: {
-    titulo: "Chatbot - Tre Fratelli",
-    flag: "<span class='fi fi-gb'></span>",
-    langName: "En-Uk",
-    btn_2: "<span class='fi fi-it'></span> It",
-    btn_3: "<span class='fi fi-gb'></span> En-Uk",
-    btn_4: "<span class='fi fi-br'></span> Pt-Br",
+    en_uk: {
+      titulo: "Chatbot - Tre Fratelli",
+      flag: "<span class='fi fi-gb'></span>",
+      langName: "En-Uk",
+      btn_2: "<span class='fi fi-it'></span> It",
+      btn_3: "<span class='fi fi-gb'></span> En-Uk",
+      btn_4: "<span class='fi fi-br'></span> Pt-Br",
 
-    h1_1: "Winery and Restaurant",
-    h2_1: "Tre Fratelli",
-    p_1: "Tre Fratelli",
-    input_1: "Tell me your mood or chosen dish"
-  },
+      h1_1: "Winery and Restaurant",
+      h2_1: "Tre Fratelli",
+      p_1: "Tre Fratelli",
+      input_1: "Tell me your mood or chosen dish"
+    },
 
-  pt_br: {
-    titulo: "Chatbot - Tre Fratelli",
-    flag: "<span class='fi fi-br'></span>",
-    langName: "Pt-Br",
-    btn_2: "<span class='fi fi-it'></span> It",
-    btn_3: "<span class='fi fi-gb'></span> En-Uk",
-    btn_4: "<span class='fi fi-br'></span> Pt-Br",
+    pt_br: {
+      titulo: "Chatbot - Tre Fratelli",
+      flag: "<span class='fi fi-br'></span>",
+      langName: "Pt-Br",
+      btn_2: "<span class='fi fi-it'></span> It",
+      btn_3: "<span class='fi fi-gb'></span> En-Uk",
+      btn_4: "<span class='fi fi-br'></span> Pt-Br",
 
-    h1_1: "Vinícola e Restaurante",
-    h2_1: "Tre Fratelli",
-    p_1: "Tre Fratelli",
-    input_1: "Conte-me seu humor ou prato escolhido"
-  }
-};
-
-function setLanguage(lang) {
-  const elements = document.querySelectorAll('[id]');
-  const translations = i18n[lang];
-
-  elements.forEach(el => {
-    const key = el.id;
-    if (translations[key]) {
-      if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
-        el.innerHTML = translations[key];
-      } else {
-        el.textContent = translations[key];
-      }
+      h1_1: "Vinícola e Restaurante",
+      h2_1: "Tre Fratelli",
+      p_1: "Tre Fratelli",
+      input_1: "Conte-me seu humor ou prato escolhido"
     }
+  };
+
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[id]');
+    const translations = i18n[lang];
+
+    elements.forEach(el => {
+      const key = el.id;
+      if (translations[key]) {
+        if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+          el.innerHTML = translations[key];
+        } else {
+          el.textContent = translations[key];
+        }
+      }
+    });
+
+    const input = document.getElementById('input_1');
+    if (input && translations['input_1']) input.placeholder = translations['input_1'];
+
+    localStorage.setItem('lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    setLanguage(savedLang);
   });
-
-  const input = document.getElementById('input_1');
-  if (input && translations['input_1']) input.placeholder = translations['input_1'];
-
-  localStorage.setItem('lang', lang);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('lang') || 'it';
-  setLanguage(savedLang);
-});
 </script>
+
 </html>
