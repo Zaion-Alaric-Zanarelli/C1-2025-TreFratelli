@@ -44,7 +44,7 @@ Il sito web proposto unisce tradizione e tecnologia. Le sezioni principali inclu
 - **Esperienze in Valle**: itinerari e punti d’interesse
 
 **Aspetti tecnici:**
-- hosting su *VZ Data Intelligence*  
+- hosting su *VZ Data Intelligence Brasil*  
 - sistema di prenotazione via API  
 - supporto multilingua (IT / EN / PT)
 
