@@ -44,7 +44,7 @@ A seguir estão listados todos os grupos participantes, seus gerentes, membros e
 **Membros:** Maria Eduarda, Mariana da Silva, Ricardo de Godoy  
 
 ### **Atividades:**  
-- Criação da logo oficial da empresa fictícia.  
+- Criação da logo oficial do restaurante e cantina TreFratelli.  
 - Tradução dos textos para três idiomas: português brasileiro, inglês britânico e italiano.  
 - Criação de três versões do design final, uma para cada língua.
 
